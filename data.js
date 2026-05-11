@@ -1,0 +1,303 @@
+// ============================================================
+//  ADICIONE SEUS RECURSOS AQUI
+//  Tipos disponíveis: "video" | "link" | "image" | "download"
+// ============================================================
+
+const RESOURCES = [
+
+  // ── DESTAQUE ────────────────────────────────────────────────
+  {
+    type: "link",
+    title: "Epidemic Sound — Biblioteca de Música",
+    url: "https://share.epidemicsound.com/f2rtl9",
+    thumbnail: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80",
+    description: "A melhor biblioteca de música e efeitos sonoros para criadores. Use meu link de referral para testar grátis.",
+    tags: ["música", "som", "biblioteca", "referral", "ferramenta"],
+  },
+
+  // ── REFERÊNCIAS & LINKS ─────────────────────────────────────
+  {
+    type: "link",
+    title: "Art of the Title",
+    url: "https://artofthetitle.com",
+    thumbnail: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80",
+    description: "O site definitivo para análises aprofundadas das melhores sequências de abertura do cinema e TV.",
+    tags: ["referência", "títulos", "motion design", "cinema", "inspiração"],
+  },
+  {
+    type: "link",
+    title: "Are.na — Art of the Title (curadoria)",
+    url: "https://www.are.na/theo-marielle/art-of-the-title",
+    thumbnail: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+    description: "Coleção curada no Are.na com referências de design de títulos e sequências de créditos cinematográficos.",
+    tags: ["referência", "títulos", "motion design", "curadoria", "inspiração"],
+  },
+  {
+    type: "link",
+    title: "Vimeo Staff Picks",
+    url: "https://vimeo.com/channels/staffpicks",
+    thumbnail: "https://images.unsplash.com/photo-1536240478700-b869ad10a2eb?w=800&q=80",
+    description: "Curadoria editorial do Vimeo — o melhor de short film, comercial e video art selecionado pela equipe.",
+    tags: ["referência", "curadoria", "short film", "comercial", "inspiração"],
+  },
+
+  // ── PLAYLIST 1 — Referências Visuais ────────────────────────
+  {
+    type: "video",
+    title: "Lay's Chip Cam with David Beckham & Thierry Henry",
+    url: "https://www.youtube.com/watch?v=LLJ38OdS_q8",
+    description: "Campanha publicitária da Lay's com câmera escondida estrelando Beckham e Thierry Henry. Execução leve, timing perfeito.",
+    tags: ["referência", "publicidade", "direção", "inspiração"],
+  },
+  {
+    type: "video",
+    title: "Defy — On Spec Ad (Sony Venice + FX3 + Freefly Ember)",
+    url: "https://www.youtube.com/watch?v=w0PkvfJ-uBg",
+    description: "Spec ad cinematográfico rodado com Sony Venice, FX3 e drone Ember. Showcase técnico e estético de alto nível.",
+    tags: ["referência", "publicidade", "cinematografia", "spec ad", "inspiração"],
+  },
+  {
+    type: "video",
+    title: "ArrDee — Different ft. The Shapeshifters",
+    url: "https://www.youtube.com/watch?v=6meAaX907to",
+    description: "Videoclipe do rapper britânico ArrDee em parceria com The Shapeshifters. Produção visual densa e bem construída.",
+    tags: ["referência", "videoclipe", "direção", "inspiração"],
+  },
+  {
+    type: "video",
+    title: "Como produzimos 4 Reels para um restaurante em 1 dia só",
+    url: "https://www.youtube.com/watch?v=T70A0yeBNLU",
+    description: "Produção acelerada de conteúdo: como planejar e executar 4 reels para um cliente em um único dia de gravação.",
+    tags: ["referência", "produção", "reels", "behind the scenes", "workflow"],
+  },
+  {
+    type: "video",
+    title: "Cinematic Fashion Film — Beyond Space (Sony Venice + Leica R)",
+    url: "https://www.youtube.com/watch?v=xKha-MXPKTQ",
+    description: "Fashion film cinematográfico com combinação de Sony Venice e lentes Leica R. Estética limpa e atmosfera forte.",
+    tags: ["referência", "fashion film", "cinematografia", "inspiração"],
+  },
+  {
+    type: "video",
+    title: "Sempre Forza Ferrari",
+    url: "https://www.youtube.com/watch?v=rvpD9e-wPBk",
+    description: "Comercial emotivo em homenagem à história da Ferrari nas corridas. Direção e montagem impecáveis.",
+    tags: ["referência", "publicidade", "direção", "montagem", "inspiração"],
+  },
+  {
+    type: "video",
+    title: "Young Miko — WASSUP (Official)",
+    url: "https://www.youtube.com/watch?v=LEhTlLnOVDU",
+    description: "Videoclipe oficial de Young Miko. Visual arrojado com referências de estética latina contemporânea.",
+    tags: ["referência", "videoclipe", "direção", "inspiração"],
+  },
+  {
+    type: "video",
+    title: "NEMZZZ — PTSD (Official Video)",
+    url: "https://www.youtube.com/watch?v=oojBNXKtE9M",
+    description: "Videoclipe oficial do rapper britânico NEMZZZ. Narrativa visual densa com linguagem cinematográfica marcante.",
+    tags: ["referência", "videoclipe", "direção", "cinematografia", "inspiração"],
+  },
+  {
+    type: "video",
+    title: "Kidwild — Redemption ft. Nemzzz",
+    url: "https://www.youtube.com/watch?v=MYHrk_6qky8",
+    description: "Videoclipe de Kidwild em feat com Nemzzz. Produção visual coesa com bom uso de locações e iluminação.",
+    tags: ["referência", "videoclipe", "direção", "iluminação", "inspiração"],
+  },
+
+  {
+    type: "video",
+    title: "The Next Chapter — First US Female Fitness Athlete of Red Bull",
+    url: "https://www.youtube.com/watch?v=i0KBwYzivmc",
+    description: "Produção documental cinematográfica da Red Bull. Storytelling atlético com direção e fotografia de alto nível.",
+    tags: ["referência", "documentário", "red bull", "cinematografia", "inspiração"],
+  },
+  {
+    type: "video",
+    title: "Interplanetary Criminal — No Time feat. Sadboi (Official Video)",
+    url: "https://www.youtube.com/watch?v=XVzxU5HNwtk",
+    description: "Videoclipe oficial com estética visual marcante — na linha dos outros UK artists da coleção.",
+    tags: ["referência", "videoclipe", "direção", "inspiração"],
+  },
+
+  // ── PLAYLIST 2 — Tutoriais & Educacional ────────────────────
+  {
+    type: "video",
+    title: "How to Animate Maps Like VOX — After Effects Tutorial",
+    url: "https://www.youtube.com/watch?v=8Xxxd7me-oc",
+    description: "Tutorial de After Effects ensinando a animar mapas no estilo editorial do canal VOX.",
+    tags: ["tutorial", "after effects", "motion design", "educacional"],
+  },
+  {
+    type: "video",
+    title: "A Simple Guide to Depth of Field",
+    url: "https://www.youtube.com/watch?v=34jkJoN8qOI",
+    description: "Guia direto e prático sobre profundidade de campo: o que é, como controlar e quando usar.",
+    tags: ["tutorial", "cinematografia", "câmera", "educacional"],
+  },
+  {
+    type: "video",
+    title: "What is Dynamic Range? — Video Tech Explained",
+    url: "https://www.youtube.com/watch?v=FTXMx8ij_Nw",
+    description: "Explicação clara e visual sobre alcance dinâmico em câmeras: como afeta a imagem e como aproveitar ao máximo.",
+    tags: ["tutorial", "câmera", "técnica", "educacional"],
+  },
+  {
+    type: "video",
+    title: "Color Spaces: Explained from the Ground Up",
+    url: "https://www.youtube.com/watch?v=99v96TL-tuY",
+    description: "Do básico ao avançado: como funcionam os espaços de cor em vídeo — Rec.709, Log, RAW e tudo mais.",
+    tags: ["tutorial", "color grading", "técnica", "educacional"],
+  },
+  {
+    type: "video",
+    title: "Color Theory — SULA LIVES",
+    url: "https://www.youtube.com/watch?v=VbJtLQPj4go",
+    description: "Fundamentos de teoria das cores aplicados à criação visual: como cores se relacionam e criam emoção.",
+    tags: ["tutorial", "color grading", "teoria", "educacional"],
+  },
+  {
+    type: "video",
+    title: "The Amazing Math Behind Colors!",
+    url: "https://www.youtube.com/watch?v=gnUYoQ1pwes",
+    description: "A matemática por trás da percepção de cor, espaços de cor e como os displays representam o espectro visível.",
+    tags: ["tutorial", "color grading", "teoria", "educacional"],
+  },
+  {
+    type: "video",
+    title: "Hide Your Audio Cuts With This Method in DaVinci Resolve",
+    url: "https://www.youtube.com/watch?v=d2RRrqNzmWg",
+    description: "Técnica para mascarar cortes bruscos de áudio no DaVinci Resolve e deixar a trilha mais fluida.",
+    tags: ["tutorial", "davinci resolve", "áudio", "edição", "educacional"],
+  },
+  {
+    type: "video",
+    title: "How the 'Severance' Editor Cut the Finale Like a Music Video",
+    url: "https://www.youtube.com/watch?v=eGkfByNEcw0",
+    description: "Análise de como o editor de Severance usou ritmo e música para montar o finale como se fosse um videoclipe.",
+    tags: ["edição", "análise", "montagem", "referência", "educacional"],
+  },
+  {
+    type: "video",
+    title: "Beat the Compression! How to Get Better YouTube Uploads",
+    url: "https://www.youtube.com/watch?v=DI1BjkmVhTg",
+    description: "Como exportar e fazer upload para o YouTube com menos perda por compressão — configurações práticas.",
+    tags: ["tutorial", "exportação", "youtube", "técnica", "educacional"],
+  },
+  {
+    type: "video",
+    title: "Mastering Skin Tones with Balance DCTL for DaVinci Resolve",
+    url: "https://www.youtube.com/watch?v=_wpinhILzgg",
+    description: "Workflow para corrigir e equalizar tons de pele usando o DCTL Balance no DaVinci Resolve.",
+    tags: ["tutorial", "davinci resolve", "color grading", "pele", "educacional"],
+  },
+  {
+    type: "video",
+    title: "Inside the Live Session: Billie Eilish — 'Birds of a Feather' com Aron Forbes",
+    url: "https://www.youtube.com/watch?v=5CgR3UH1txU",
+    description: "Bastidores do mix ao vivo de 'Birds of a Feather' da Billie Eilish com o mixer Aron Forbes — processo e decisões técnicas.",
+    tags: ["áudio", "mix", "behind the scenes", "educacional"],
+  },
+  {
+    type: "video",
+    title: "Color Correction for Concert Lighting — Fixing Extreme Tints in Lightroom",
+    url: "https://www.youtube.com/watch?v=_R2cUv61s7I",
+    description: "Como corrigir dominantes de cor extremas causadas por iluminação de shows e concertos no Lightroom.",
+    tags: ["tutorial", "color grading", "fotografia", "lightroom", "educacional"],
+  },
+  {
+    type: "video",
+    title: "The \"Geometry\" of Colours",
+    url: "https://www.youtube.com/watch?v=7KYwi2F5Ce4",
+    description: "Como a geometria dos espaços de cor define as relações entre cores — uma perspectiva matemática e visual.",
+    tags: ["tutorial", "color grading", "teoria", "educacional"],
+  },
+  {
+    type: "video",
+    title: "Why The Bear Gets In Your Head",
+    url: "https://www.youtube.com/watch?v=Lca_XEoO4b8",
+    description: "Análise do que torna The Bear tão impactante: edição, direção e som trabalhando juntos de forma cirúrgica.",
+    tags: ["análise", "edição", "direção", "montagem", "educacional"],
+  },
+  {
+    type: "video",
+    title: "How To Get a Commercial Look in DaVinci Resolve",
+    url: "https://www.youtube.com/watch?v=gZXIfcm2KR8",
+    description: "Workflow completo para alcançar um look publicitário limpo e polido direto no DaVinci Resolve.",
+    tags: ["tutorial", "davinci resolve", "color grading", "publicidade", "educacional"],
+  },
+  {
+    type: "video",
+    title: "How To Edit Documentaries Like James Jani",
+    url: "https://www.youtube.com/watch?v=bwz-jLZz2w8",
+    description: "Como estruturar, narrar e editar documentários no estilo de James Jani — ritmo, storytelling e recursos visuais.",
+    tags: ["tutorial", "edição", "documentário", "storytelling", "educacional"],
+  },
+  {
+    type: "video",
+    title: "Direção de Fotografia em Publicidade, Clipes e Ficção — feat. Victor Alencar",
+    url: "https://www.youtube.com/watch?v=x3s0kMgSiMY",
+    description: "Conversa aprofundada sobre como a direção de fotografia se adapta a diferentes formatos audiovisuais com Victor Alencar.",
+    tags: ["cinematografia", "direção", "educacional", "entrevista"],
+  },
+  {
+    type: "video",
+    title: "Why You Should Care About Lighting Ratios",
+    url: "https://www.youtube.com/watch?v=U4egvCgW7qc",
+    description: "Por que dominar ratios de iluminação muda completamente a qualidade e o controle sobre a sua imagem.",
+    tags: ["tutorial", "iluminação", "cinematografia", "educacional"],
+  },
+  {
+    type: "video",
+    title: "One-Man Videographer: How to Shoot, Price & Deliver a Corporate Video",
+    url: "https://www.youtube.com/watch?v=NJBznivKoTg",
+    description: "Como filmar, precificar e entregar vídeo corporativo trabalhando sozinho — do orçamento à entrega.",
+    tags: ["tutorial", "carreira", "produção", "negócios", "educacional"],
+  },
+  {
+    type: "video",
+    title: "How I Made Over $200,000 As a Filmmaker Last Year",
+    url: "https://www.youtube.com/watch?v=n0Afhmb1-ag",
+    description: "Relato detalhado de como um filmmaker independente faturou mais de $200k — fontes de renda, estratégias e mentalidade.",
+    tags: ["carreira", "negócios", "freelance", "educacional"],
+  },
+
+  // ── PLAYLIST 3 — Processo Criativo & Mindset ────────────────
+  {
+    type: "video",
+    title: "Eduardo Marinho — Vencer, vencer, vencer, para quê?",
+    url: "https://www.youtube.com/watch?v=j72UPe2qnV4",
+    description: "Eduardo Marinho reflete sobre o sentido real de vencer e o que de fato importa na jornada criativa.",
+    tags: ["mindset", "processo criativo", "motivação", "carreira"],
+  },
+  {
+    type: "video",
+    title: "Behind the Scenes of Lil Yachty's \"Murda\" Music Video",
+    url: "https://www.youtube.com/watch?v=uGRfuxmK6ls",
+    description: "Bastidores completos da produção do videoclipe 'Murda' de Lil Yachty — decisões criativas e de set.",
+    tags: ["behind the scenes", "videoclipe", "produção", "processo criativo"],
+  },
+  {
+    type: "video",
+    title: "Observar e Absorver — Eduardo Marinho (Documentário Completo)",
+    url: "https://www.youtube.com/watch?v=I7arqW5luKc",
+    description: "Documentário completo de Eduardo Marinho sobre o ato de observar o mundo como combustível para a criatividade.",
+    tags: ["documentário", "mindset", "processo criativo", "inspiração"],
+  },
+  {
+    type: "video",
+    title: "How I Fixed My Attention Span",
+    url: "https://www.youtube.com/watch?v=vYaNiC4kchg",
+    description: "Como reconquistar foco e atenção em um mundo cheio de distrações — estratégias práticas e honestas.",
+    tags: ["mindset", "foco", "produtividade", "processo criativo"],
+  },
+  {
+    type: "video",
+    title: "About Finishing What You Started",
+    url: "https://www.youtube.com/watch?v=RH7VZVKTzac",
+    description: "Reflexão sobre a importância de terminar o que se começa — e por que a maioria dos projetos criativos morre no meio.",
+    tags: ["mindset", "processo criativo", "motivação", "disciplina"],
+  },
+
+];
