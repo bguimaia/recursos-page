@@ -119,7 +119,46 @@
       gap: 8px;
       flex-wrap: wrap;
       margin-bottom: 14px;
+      align-items: center;
     }
+
+    .tag-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px dashed var(--border);
+      background: transparent;
+      color: var(--muted);
+      transition: all .18s;
+      user-select: none;
+      letter-spacing: .3px;
+      margin-left: auto;
+    }
+    .tag-toggle:hover { color: var(--text); border-color: #555; }
+    .tag-toggle.open  { border-style: solid; border-color: var(--accent); color: var(--accent); }
+    .tag-toggle .badge {
+      background: var(--accent);
+      color: #111;
+      font-size: .65rem;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 1px 6px;
+      display: none;
+    }
+    .tag-toggle .badge.visible { display: inline; }
+
+    .tag-scroll {
+      display: none;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .tag-scroll.open { display: flex; }
 
     .pill {
       display: inline-flex;
@@ -149,15 +188,6 @@
     .pill.active.download { background: #16a34a; border-color: #16a34a; color: #fff; }
 
     .pill:hover { filter: brightness(1.2); }
-
-    .tag-scroll {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 4px;
-      scrollbar-width: none;
-    }
-    .tag-scroll::-webkit-scrollbar { display: none; }
 
     .tag {
       flex-shrink: 0;
@@ -333,9 +363,8 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       width: 100%;
-      max-width: 860px;
       overflow: hidden;
-      position: relative;
+      overflow-y: auto;
       animation: pop .22s cubic-bezier(.34,1.56,.64,1);
     }
     @keyframes pop {
@@ -343,14 +372,24 @@
       to   { transform: scale(1);   opacity: 1; }
     }
 
+    .modal-wrap {
+      position: relative;
+      width: 90vw;
+      max-width: 900px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+    }
+
     .modal-close {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      z-index: 10;
-      background: rgba(0,0,0,.6);
+      top: -42px;
+      right: 0;
+      z-index: 1100;
+      background: rgba(20,20,20,.85);
+      backdrop-filter: blur(8px);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 10px;
       width: 34px;
       height: 34px;
       display: flex;
@@ -358,13 +397,14 @@
       justify-content: center;
       cursor: pointer;
       color: var(--text);
-      transition: background .15s;
+      transition: background .15s, transform .15s;
     }
-    .modal-close:hover { background: rgba(255,255,255,.15); }
+    .modal-close:hover { background: rgba(255,255,255,.15); transform: scale(1.08); }
 
     #modal-iframe-wrap {
       aspect-ratio: 16/9;
       background: #000;
+      width: 100%;
     }
     #modal-iframe-wrap iframe {
       width: 100%;
@@ -454,6 +494,11 @@
     <div class="pill link" data-type="link">↗ Link</div>
     <div class="pill image" data-type="image">◉ Imagem</div>
     <div class="pill download" data-type="download">↓ Download</div>
+    <button class="tag-toggle" id="tag-toggle">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+      Tags
+      <span class="badge" id="tag-badge"></span>
+    </button>
   </div>
   <div class="tag-scroll" id="tag-pills"></div>
 </div>
@@ -469,20 +514,35 @@
 
 <!-- MODAL -->
 <div id="modal">
-  <div class="modal-box" id="modal-box">
+  <div class="modal-wrap">
     <button class="modal-close" id="modal-close">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M18 6 6 18M6 6l12 12"/>
       </svg>
     </button>
-    <div id="modal-iframe-wrap" style="display:none"></div>
-    <div id="modal-img-wrap"    style="display:none"></div>
-    <div class="modal-info" id="modal-info"></div>
+    <div class="modal-box" id="modal-box">
+      <div id="modal-iframe-wrap" style="display:none"></div>
+      <div id="modal-img-wrap"    style="display:none"></div>
+      <div class="modal-info" id="modal-info"></div>
+    </div>
   </div>
 </div>
 
 <script src="data.js"></script>
 <script>
+  // ── Shuffle (Fisher-Yates) ───────────────────────────────────
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  // Combina: pinned fixos na frente + resto embaralhado
+  const ALL = [...PINNED, ...shuffle(RESOURCES)];
+
   // ── YouTube helpers ──────────────────────────────────────────
   function ytId(url) {
     const m = url.match(/(?:v=|youtu\.be\/|embed\/)([a-zA-Z0-9_-]{11})/);
@@ -499,7 +559,7 @@
   let searchQ    = '';
 
   // ── Collect all tags ─────────────────────────────────────────
-  const allTags = [...new Set(RESOURCES.flatMap(r => r.tags))].sort();
+  const allTags = [...new Set(ALL.flatMap(r => r.tags))].sort();
 
   // ── Build tag pills ──────────────────────────────────────────
   const tagPillsEl = document.getElementById('tag-pills');
@@ -512,6 +572,7 @@
       if (activeTags.has(tag)) activeTags.delete(tag);
       else activeTags.add(tag);
       el.classList.toggle('active', activeTags.has(tag));
+      updateTagBadge();
       render();
     });
     tagPillsEl.appendChild(el);
@@ -535,7 +596,7 @@
 
   // ── Filter ───────────────────────────────────────────────────
   function filtered() {
-    return RESOURCES.filter(r => {
+    return ALL.filter(r => {
       if (activeType !== 'all' && r.type !== activeType) return false;
       if (activeTags.size > 0 && !r.tags.some(t => activeTags.has(t))) return false;
       if (searchQ && !r.title.toLowerCase().includes(searchQ) &&
@@ -641,14 +702,35 @@
     document.body.style.overflow = '';
   }
 
+  // ── Tag panel toggle ─────────────────────────────────────────
+  const tagToggleBtn = document.getElementById('tag-toggle');
+  const tagBadge     = document.getElementById('tag-badge');
+
+  function setTagPanelOpen(open) {
+    tagPillsEl.classList.toggle('open', open);
+    tagToggleBtn.classList.toggle('open', open);
+    tagToggleBtn.querySelector('svg').style.transform = open ? 'rotate(180deg)' : '';
+  }
+
+  function updateTagBadge() {
+    const n = activeTags.size;
+    tagBadge.textContent = n;
+    tagBadge.classList.toggle('visible', n > 0);
+  }
+
+  tagToggleBtn.addEventListener('click', () => {
+    setTagPanelOpen(!tagPillsEl.classList.contains('open'));
+  });
+
   // ── Activate tag from card or modal ─────────────────────────
   function activateTag(tag) {
     if (!activeTags.has(tag)) activeTags.add(tag);
     else activeTags.delete(tag);
     const pill = tagPillsEl.querySelector(`[data-tag="${tag}"]`);
     if (pill) pill.classList.toggle('active', activeTags.has(tag));
+    setTagPanelOpen(true); // abre o painel ao clicar numa tag
+    updateTagBadge();
     render();
-    document.querySelector('.filter-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   document.getElementById('modal-close').addEventListener('click', closeModal);

@@ -1,11 +1,19 @@
 // ============================================================
-//  ADICIONE SEUS RECURSOS AQUI
+//  RECURSOS — duas seções:
+//
+//  PINNED   → aparecem SEMPRE primeiro, na ordem definida aqui.
+//             Use para links prioritários (referrals, ferramentas, etc.)
+//
+//  RESOURCES → embaralhados a cada visita, experiência dinâmica.
+//              Use para vídeos, referências e conteúdo geral.
+//
 //  Tipos disponíveis: "video" | "link" | "image" | "download"
 // ============================================================
 
-const RESOURCES = [
 
-  // ── DESTAQUE ────────────────────────────────────────────────
+// ── FIXOS — sempre no topo, na ordem abaixo ─────────────────
+const PINNED = [
+
   {
     type: "link",
     title: "Epidemic Sound — Biblioteca de Música",
@@ -14,8 +22,6 @@ const RESOURCES = [
     description: "A melhor biblioteca de música e efeitos sonoros para criadores. Use meu link de referral para testar grátis.",
     tags: ["música", "som", "biblioteca", "referral", "ferramenta"],
   },
-
-  // ── REFERÊNCIAS & LINKS ─────────────────────────────────────
   {
     type: "link",
     title: "Art of the Title",
@@ -41,7 +47,13 @@ const RESOURCES = [
     tags: ["referência", "curadoria", "short film", "comercial", "inspiração"],
   },
 
-  // ── PLAYLIST 1 — Referências Visuais ────────────────────────
+];
+
+
+// ── ALEATÓRIOS — embaralhados a cada visita ──────────────────
+const RESOURCES = [
+
+  // Playlist 1 — Referências Visuais
   {
     type: "video",
     title: "Lay's Chip Cam with David Beckham & Thierry Henry",
@@ -105,7 +117,6 @@ const RESOURCES = [
     description: "Videoclipe de Kidwild em feat com Nemzzz. Produção visual coesa com bom uso de locações e iluminação.",
     tags: ["referência", "videoclipe", "direção", "iluminação", "inspiração"],
   },
-
   {
     type: "video",
     title: "The Next Chapter — First US Female Fitness Athlete of Red Bull",
@@ -121,7 +132,7 @@ const RESOURCES = [
     tags: ["referência", "videoclipe", "direção", "inspiração"],
   },
 
-  // ── PLAYLIST 2 — Tutoriais & Educacional ────────────────────
+  // Playlist 2 — Tutoriais & Educacional
   {
     type: "video",
     title: "How to Animate Maps Like VOX — After Effects Tutorial",
@@ -263,7 +274,7 @@ const RESOURCES = [
     tags: ["carreira", "negócios", "freelance", "educacional"],
   },
 
-  // ── PLAYLIST 3 — Processo Criativo & Mindset ────────────────
+  // Playlist 3 — Processo Criativo & Mindset
   {
     type: "video",
     title: "Eduardo Marinho — Vencer, vencer, vencer, para quê?",
