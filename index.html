@@ -67,7 +67,7 @@
     .header-center { flex: 1; display: flex; align-items: center; justify-content: center; }
     .header-right { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
 
-    .logo img { height: 53px; width: auto; display: block; }
+    .logo img { height: 53px; width: auto; display: block; cursor: pointer; }
 
     .search-wrap {
       width: 100%;
@@ -220,17 +220,22 @@
       letter-spacing: .3px;
       text-transform: uppercase;
     }
-    .pill.all   { background: var(--surface2); border-color: var(--border); color: var(--text); }
-    .pill.video { background: #1a0a2e; border-color: #7c3aed40; color: #a78bfa; }
-    .pill.link  { background: #0a1f2e; border-color: #0ea5e940; color: #38bdf8; }
-    .pill.image { background: #1a1a0a; border-color: #ca8a0440; color: #fbbf24; }
-    .pill.download { background: #0a2010; border-color: #16a34a40; color: #4ade80; }
+    /* ── Category pills — muted distinct colors ── */
+    .pill.all        { background: var(--surface2); border-color: var(--border); color: var(--text); }
+    .pill.referencias{ background: rgba(196,144,122,.06); border-color: rgba(196,144,122,.25); color: #C4907A; }
+    .pill.tutoriais  { background: rgba(122,184,152,.06); border-color: rgba(122,184,152,.25); color: #7AB898; }
+    .pill.color-cam  { background: rgba(122,158,196,.06); border-color: rgba(122,158,196,.25); color: #7A9EC4; }
+    .pill.processo   { background: rgba(164,143,196,.06); border-color: rgba(164,143,196,.25); color: #A48FC4; }
+    .pill.links      { background: rgba(196,176,122,.06); border-color: rgba(196,176,122,.25); color: #C4B07A; }
+    .pill.download   { background: rgba(122,196,170,.06); border-color: rgba(122,196,170,.25); color: #7AC4AA; }
 
-    .pill.active.all      { background: var(--surface2); border-color: var(--text); color: var(--text); }
-    .pill.active.video    { background: #7c3aed; border-color: #7c3aed; color: #fff; }
-    .pill.active.link     { background: #0ea5e9; border-color: #0ea5e9; color: #fff; }
-    .pill.active.image    { background: #ca8a04; border-color: #ca8a04; color: #fff; }
-    .pill.active.download { background: #16a34a; border-color: #16a34a; color: #fff; }
+    .pill.active.all        { background: var(--surface2); border-color: var(--text); color: var(--text); }
+    .pill.active.referencias{ background: rgba(196,144,122,.14); border-color: #C4907A; color: #C4907A; }
+    .pill.active.tutoriais  { background: rgba(122,184,152,.14); border-color: #7AB898; color: #7AB898; }
+    .pill.active.color-cam  { background: rgba(122,158,196,.14); border-color: #7A9EC4; color: #7A9EC4; }
+    .pill.active.processo   { background: rgba(164,143,196,.14); border-color: #A48FC4; color: #A48FC4; }
+    .pill.active.links      { background: rgba(196,176,122,.14); border-color: #C4B07A; color: #C4B07A; }
+    .pill.active.download   { background: rgba(122,196,170,.14); border-color: #7AC4AA; color: #7AC4AA; }
 
     .pill:hover { filter: brightness(1.2); }
 
@@ -534,11 +539,13 @@
 <!-- FILTERS -->
 <div class="filter-area">
   <div class="type-pills" id="type-pills">
-    <div class="pill all active" data-type="all">Todos</div>
-    <div class="pill video" data-type="video">▶ Vídeo</div>
-    <div class="pill link" data-type="link">↗ Link</div>
-    <div class="pill image" data-type="image">◉ Imagem</div>
-    <div class="pill download" data-type="download">↓ Download</div>
+    <div class="pill all active" data-cat="all">Todos</div>
+    <div class="pill referencias" data-cat="referencias">Referências</div>
+    <div class="pill tutoriais" data-cat="tutoriais">Tutoriais</div>
+    <div class="pill color-cam" data-cat="color">Color & Câmera</div>
+    <div class="pill processo" data-cat="processo">Processo Criativo</div>
+    <div class="pill links" data-cat="links">Links</div>
+    <div class="pill download" data-cat="download">Download</div>
     <button class="tag-toggle" id="tag-toggle">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
       Tags
@@ -598,39 +605,80 @@
     return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : null;
   }
 
+  // ── Tipo inferido automaticamente pela URL ───────────────────
+  function inferType(r) {
+    if (r.type) return r.type; // override explícito (ex: "download", "image")
+    if (/youtube\.com|youtu\.be/i.test(r.url)) return 'video';
+    return 'link';
+  }
+
+  // ── Category filter map ──────────────────────────────────────
+  const CATEGORY_FILTERS = {
+    all:        () => true,
+    referencias: r => r.cat === 'referencias',
+    tutoriais:   r => r.cat === 'tutoriais',
+    color:       r => r.tags.includes('color grading') || r.tags.includes('cinematografia'),
+    processo:    r => r.cat === 'processo',
+    links:       r => inferType(r) === 'link',
+    download:    r => inferType(r) === 'download',
+  };
+
   // ── State ────────────────────────────────────────────────────
-  let activeType = 'all';
+  let activeCategory = 'all';
   let activeTags = new Set();
   let searchQ    = '';
 
-  // ── Collect all tags ─────────────────────────────────────────
-  const allTags = [...new Set(ALL.flatMap(r => r.tags))].sort();
-
-  // ── Build tag pills ──────────────────────────────────────────
+  // ── Build tag pills (dinâmico por categoria) ─────────────────
   const tagPillsEl = document.getElementById('tag-pills');
-  allTags.forEach(tag => {
-    const el = document.createElement('div');
-    el.className = 'tag';
-    el.textContent = tag;
-    el.dataset.tag = tag;
-    el.addEventListener('click', () => {
-      if (activeTags.has(tag)) activeTags.delete(tag);
-      else activeTags.add(tag);
-      el.classList.toggle('active', activeTags.has(tag));
-      updateTagBadge();
-      render();
-    });
-    tagPillsEl.appendChild(el);
-  });
 
-  // ── Type pills ───────────────────────────────────────────────
+  function buildTagPills() {
+    // Tags dos itens visíveis na categoria ativa
+    const visibleItems = ALL.filter(r => CATEGORY_FILTERS[activeCategory](r));
+    const tags = [...new Set(visibleItems.flatMap(r => r.tags))].sort();
+
+    tagPillsEl.innerHTML = '';
+    tags.forEach(tag => {
+      const el = document.createElement('div');
+      el.className = 'tag';
+      el.textContent = tag;
+      el.dataset.tag = tag;
+      if (activeTags.has(tag)) el.classList.add('active');
+      el.addEventListener('click', () => {
+        if (activeTags.has(tag)) activeTags.delete(tag);
+        else activeTags.add(tag);
+        el.classList.toggle('active', activeTags.has(tag));
+        updateTagBadge();
+        render();
+      });
+      tagPillsEl.appendChild(el);
+    });
+  }
+
+  // ── Category pills ───────────────────────────────────────────
   document.querySelectorAll('#type-pills .pill').forEach(pill => {
     pill.addEventListener('click', () => {
-      activeType = pill.dataset.type;
+      activeCategory = pill.dataset.cat;
+      activeTags.clear();
+      updateTagBadge();
       document.querySelectorAll('#type-pills .pill').forEach(p =>
-        p.classList.toggle('active', p.dataset.type === activeType));
+        p.classList.toggle('active', p.dataset.cat === activeCategory));
+      buildTagPills();
       render();
     });
+  });
+
+  // ── Logo reset ───────────────────────────────────────────────
+  document.querySelector('.logo').addEventListener('click', () => {
+    activeCategory = 'all';
+    activeTags.clear();
+    searchQ = '';
+    document.getElementById('search').value = '';
+    document.querySelectorAll('#type-pills .pill').forEach(p =>
+      p.classList.toggle('active', p.dataset.cat === 'all'));
+    setTagPanelOpen(false);
+    updateTagBadge();
+    buildTagPills();
+    render();
   });
 
   // ── Search ───────────────────────────────────────────────────
@@ -642,8 +690,8 @@
   // ── Filter ───────────────────────────────────────────────────
   function filtered() {
     return ALL.filter(r => {
-      if (activeType !== 'all' && r.type !== activeType) return false;
-      if (activeTags.size > 0 && !r.tags.some(t => activeTags.has(t))) return false;
+      if (!CATEGORY_FILTERS[activeCategory](r)) return false;
+      if (activeTags.size > 0 && ![...activeTags].every(t => r.tags.includes(t))) return false;
       if (searchQ && !r.title.toLowerCase().includes(searchQ) &&
           !(r.description || '').toLowerCase().includes(searchQ) &&
           !r.tags.some(t => t.toLowerCase().includes(searchQ))) return false;
@@ -656,22 +704,23 @@
   const TYPE_PLACEHOLDER = { video: '▶', link: '🔗', image: '🖼', download: '📁' };
 
   function thumb(r) {
-    if (r.type === 'video') return ytThumb(r.url);
+    if (inferType(r) === 'video') return ytThumb(r.url);
     return r.thumbnail || null;
   }
 
   function makeCard(r) {
+    const type = inferType(r);
     const t = thumb(r);
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
       <div class="card-thumb">
         ${t
-          ? `<img src="${t}" alt="${r.title}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=thumb-placeholder>${TYPE_PLACEHOLDER[r.type]}</div>'">`
-          : `<div class="thumb-placeholder">${TYPE_PLACEHOLDER[r.type]}</div>`
+          ? `<img src="${t}" alt="${r.title}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=thumb-placeholder>${TYPE_PLACEHOLDER[type]}</div>'">`
+          : `<div class="thumb-placeholder">${TYPE_PLACEHOLDER[type]}</div>`
         }
-        ${r.type === 'video' ? `<div class="play-badge"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 16,12 10,16" fill="white"/></svg></div>` : ''}
-        <span class="type-badge ${r.type}">${TYPE_ICON[r.type]} ${r.type}</span>
+        ${type === 'video' ? `<div class="play-badge"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 16,12 10,16" fill="white"/></svg></div>` : ''}
+        <span class="type-badge ${type}">${TYPE_ICON[type]} ${type}</span>
       </div>
       <div class="card-body">
         <div class="card-title">${r.title}</div>
@@ -712,20 +761,21 @@
     iframeWrap.innerHTML = '';
     imgWrap.innerHTML    = '';
 
-    if (r.type === 'video') {
+    const type = inferType(r);
+    if (type === 'video') {
       const id = ytId(r.url);
       if (id) {
         iframeWrap.style.display = 'block';
         iframeWrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" allow="autoplay; fullscreen"></iframe>`;
       }
-    } else if (r.type === 'image') {
+    } else if (type === 'image') {
       imgWrap.style.display = 'block';
       imgWrap.innerHTML = `<img src="${r.url}" alt="${r.title}">`;
     }
 
     const actionHTML =
-      r.type === 'link'     ? `<a class="modal-action link"     href="${r.url}" target="_blank" rel="noopener">↗ Abrir link</a>` :
-      r.type === 'download' ? `<a class="modal-action download" href="${r.url}" target="_blank" rel="noopener">↓ Acessar no Drive</a>` : '';
+      type === 'link'     ? `<a class="modal-action link"     href="${r.url}" target="_blank" rel="noopener">↗ Abrir link</a>` :
+      type === 'download' ? `<a class="modal-action download" href="${r.url}" target="_blank" rel="noopener">↓ Acessar no Drive</a>` : '';
 
     modalInfo.innerHTML = `
       <div class="modal-title">${r.title}</div>
@@ -783,6 +833,7 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
   // ── Init ─────────────────────────────────────────────────────
+  buildTagPills();
   render();
 </script>
 </body>
