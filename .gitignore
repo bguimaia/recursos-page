@@ -1,8 +1,6 @@
-# Sistema
+# Impeccable tooling state (critique snapshots, live config, design sidecar)
+.impeccable/
+
+# OS / editor noise
 .DS_Store
 Thumbs.db
-
-# Editor
-.vscode/
-*.suo
-*.user
