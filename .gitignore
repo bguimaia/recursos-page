@@ -1,6 +1,12 @@
 # Impeccable tooling state (critique snapshots, live config, design sidecar)
 .impeccable/
 
+# Local dev tooling (preview launch config)
+.claude/
+
+# Transcripts intermediários (MarkItDown) — artefato de processo, não asset do site
+_transcripts/
+
 # OS / editor noise
 .DS_Store
 Thumbs.db

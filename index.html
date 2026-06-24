@@ -78,8 +78,17 @@
       --muted:     #888;
       --accent:    #FDEABF;
       --accent-dim:#c9b78a;
+
+      /* Cores semânticas de categoria — fonte única (CSS + stats bar leem daqui) */
+      --cat-ref:   #C4907A;
+      --cat-tut:   #7AB898;
+      --cat-color: #7A9EC4;
+      --cat-proc:  #A48FC4;
+      --cat-link:  #C4B07A;
+      --cat-dl:    #7AC4AA;
+
       --radius:    12px;
-      --gap:       20px;
+      --gap:       20px;   /* ritmo da grid (resource + gear). Intencional fora da escala --space-* */
 
       /* Spacing scale — 4pt base */
       --space-xs:  4px;
@@ -401,20 +410,20 @@
     }
     /* ── Category pills — muted distinct colors ── */
     .pill.all        { background: var(--surface2); border-color: var(--border); color: var(--text); }
-    .pill.referencias{ background: rgba(196,144,122,.06); border-color: rgba(196,144,122,.25); color: #C4907A; }
-    .pill.tutoriais  { background: rgba(122,184,152,.06); border-color: rgba(122,184,152,.25); color: #7AB898; }
-    .pill.color-cam  { background: rgba(122,158,196,.06); border-color: rgba(122,158,196,.25); color: #7A9EC4; }
-    .pill.processo   { background: rgba(164,143,196,.06); border-color: rgba(164,143,196,.25); color: #A48FC4; }
-    .pill.links      { background: rgba(196,176,122,.06); border-color: rgba(196,176,122,.25); color: #C4B07A; }
-    .pill.download   { background: rgba(122,196,170,.06); border-color: rgba(122,196,170,.25); color: #7AC4AA; }
+    .pill.referencias{ background: rgba(196,144,122,.06); border-color: rgba(196,144,122,.25); color: var(--cat-ref); }
+    .pill.tutoriais  { background: rgba(122,184,152,.06); border-color: rgba(122,184,152,.25); color: var(--cat-tut); }
+    .pill.color-cam  { background: rgba(122,158,196,.06); border-color: rgba(122,158,196,.25); color: var(--cat-color); }
+    .pill.processo   { background: rgba(164,143,196,.06); border-color: rgba(164,143,196,.25); color: var(--cat-proc); }
+    .pill.links      { background: rgba(196,176,122,.06); border-color: rgba(196,176,122,.25); color: var(--cat-link); }
+    .pill.download   { background: rgba(122,196,170,.06); border-color: rgba(122,196,170,.25); color: var(--cat-dl); }
 
     .pill.active.all        { background: var(--surface2); border-color: var(--text); color: var(--text); }
-    .pill.active.referencias{ background: rgba(196,144,122,.14); border-color: #C4907A; color: #C4907A; }
-    .pill.active.tutoriais  { background: rgba(122,184,152,.14); border-color: #7AB898; color: #7AB898; }
-    .pill.active.color-cam  { background: rgba(122,158,196,.14); border-color: #7A9EC4; color: #7A9EC4; }
-    .pill.active.processo   { background: rgba(164,143,196,.14); border-color: #A48FC4; color: #A48FC4; }
-    .pill.active.links      { background: rgba(196,176,122,.14); border-color: #C4B07A; color: #C4B07A; }
-    .pill.active.download   { background: rgba(122,196,170,.14); border-color: #7AC4AA; color: #7AC4AA; }
+    .pill.active.referencias{ background: rgba(196,144,122,.14); border-color: var(--cat-ref);   color: var(--cat-ref); }
+    .pill.active.tutoriais  { background: rgba(122,184,152,.14); border-color: var(--cat-tut);   color: var(--cat-tut); }
+    .pill.active.color-cam  { background: rgba(122,158,196,.14); border-color: var(--cat-color); color: var(--cat-color); }
+    .pill.active.processo   { background: rgba(164,143,196,.14); border-color: var(--cat-proc);  color: var(--cat-proc); }
+    .pill.active.links      { background: rgba(196,176,122,.14); border-color: var(--cat-link);  color: var(--cat-link); }
+    .pill.active.download   { background: rgba(122,196,170,.14); border-color: var(--cat-dl);    color: var(--cat-dl); }
 
     .pill:hover { filter: brightness(1.2); }
 
@@ -868,7 +877,8 @@
 -->
 
 <!-- ══ RECURSOS VIEW ══ -->
-<div id="recursos-view" role="tabpanel" aria-labelledby="tab-btn-recursos">
+<!-- role="tabpanel"/aria-labelledby removidos enquanto a tab-nav está oculta. Restaurar com o Gear. -->
+<div id="recursos-view">
 
   <!-- STATS -->
   <div class="stats" id="stats" aria-live="polite" aria-atomic="true"></div>
@@ -905,8 +915,8 @@
 
 </div><!-- #recursos-view -->
 
-<!-- ══ GEAR VIEW ══ -->
-<div id="gear-view" role="tabpanel" aria-labelledby="tab-btn-gear" style="display:none">
+<!-- ══ GEAR VIEW ══ (DORMANT: oculto até afiliados prontos — ver tab-nav comentada) -->
+<div id="gear-view" style="display:none">
   <div class="gear-disclosure">
     Alguns links abaixo são de programas de afiliados. Recomendo apenas o que uso de verdade.
   </div>
@@ -1095,15 +1105,13 @@
   });
 
   // ── Filter ───────────────────────────────────────────────────
-  function filtered() {
-    return ALL.filter(r => {
-      if (!CATEGORY_FILTERS[activeCategory](r)) return false;
-      if (activeTags.size > 0 && ![...activeTags].every(tag => r.tags.includes(tag))) return false;
-      if (searchQ && !r.title.toLowerCase().includes(searchQ) &&
-          !(r.description || '').toLowerCase().includes(searchQ) &&
-          !r.tags.some(tag => tag.toLowerCase().includes(searchQ))) return false;
-      return true;
-    });
+  // Aplica só tag + busca (a categoria já foi filtrada em render, p/ reusar o total)
+  function matchesTagsAndSearch(r) {
+    if (activeTags.size > 0 && ![...activeTags].every(tag => r.tags.includes(tag))) return false;
+    if (searchQ && !r.title.toLowerCase().includes(searchQ) &&
+        !(r.description || '').toLowerCase().includes(searchQ) &&
+        !r.tags.some(tag => tag.toLowerCase().includes(searchQ))) return false;
+    return true;
   }
 
   // ── Card builder ─────────────────────────────────────────────
@@ -1155,10 +1163,10 @@
     color: 'Color & Câmera', processo: 'Processo Criativo',
     links: 'Links', download: 'Download',
   };
-  // Echo the active category's semantic color in the stats label (wayfinding)
-  const CATEGORY_COLORS = {
-    referencias: '#C4907A', tutoriais: '#7AB898', color: '#7A9EC4',
-    processo: '#A48FC4', links: '#C4B07A', download: '#7AC4AA',
+  // Categoria → CSS var de cor (fonte única no :root). Usado no stats bar (wayfinding).
+  const CATEGORY_VARS = {
+    referencias: '--cat-ref', tutoriais: '--cat-tut', color: '--cat-color',
+    processo: '--cat-proc', links: '--cat-link', download: '--cat-dl',
   };
 
   const gridEl  = document.getElementById('grid');
@@ -1166,12 +1174,11 @@
   const statsEl = document.getElementById('stats');
   let renderTimer;
 
-  function _populate(list) {
+  function _populate(list, total) {
     gridEl.innerHTML = '';
-    const total = ALL.filter(r => CATEGORY_FILTERS[activeCategory](r)).length;
-    const catColor   = CATEGORY_COLORS[activeCategory];
+    const catVar     = CATEGORY_VARS[activeCategory];
     const catLabel   = activeCategory === 'all' ? ''
-      : ` · <span class="stats-cat"${catColor ? ` style="color:${catColor}"` : ''}>${CATEGORY_LABELS[activeCategory]}</span>`;
+      : ` · <span class="stats-cat"${catVar ? ` style="color:var(${catVar})"` : ''}>${CATEGORY_LABELS[activeCategory]}</span>`;
     const tagLabel   = activeTags.size ? ` · ${activeTags.size} tag${activeTags.size > 1 ? 's' : ''}` : '';
     const searchLabel = searchQ ? ` · "${searchQ}"` : '';
     statsEl.innerHTML = `<span class="stats-count">${list.length}</span> de ${total} recursos${catLabel}${tagLabel}${searchLabel}`;
@@ -1189,16 +1196,19 @@
   }
 
   function render() {
-    const list = filtered();
+    // Categoria filtrada uma vez: total = subset da categoria, list = + tag/busca
+    const inCategory = ALL.filter(r => CATEGORY_FILTERS[activeCategory](r));
+    const total = inCategory.length;
+    const list  = inCategory.filter(matchesTagsAndSearch);
     const isFirst = !gridEl.hasChildNodes() && emptyEl.style.display !== 'block';
 
     if (isFirst) {
-      _populate(list);
+      _populate(list, total);
     } else {
       clearTimeout(renderTimer);
       gridEl.classList.add('fading');
       renderTimer = setTimeout(() => {
-        _populate(list);
+        _populate(list, total);
         // Double rAF ensures paint before removing 'fading'
         requestAnimationFrame(() => requestAnimationFrame(() => {
           gridEl.classList.remove('fading');
@@ -1324,6 +1334,8 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
   // ── Gear render ──────────────────────────────────────────────
+  // DORMANT: aba Gear oculta até os links de afiliado existirem (ver tab-nav comentada).
+  //          makeGearCard/renderGear/GEAR são inalcançáveis hoje. Não remover — feature pausada.
   function makeGearCard(item) {
     const card = document.createElement('div');
     card.className = 'gear-card';
@@ -1381,6 +1393,7 @@
     history.replaceState(null, '', view === 'gear' ? '#gear' : location.pathname);
   }
 
+  // DORMANT: sem .tab-btn no DOM hoje (tab-nav comentada) — listener não liga em nada.
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });

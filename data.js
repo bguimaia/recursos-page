@@ -55,6 +55,10 @@ const PINNED = [
 // ============================================================
 //  GEAR — equipamentos e ferramentas que uso e recomendo.
 //
+//  DORMANT: a aba Gear está oculta no index.html (tab-nav comentada) até
+//           os links de afiliado existirem. Este array não é renderizado
+//           hoje, mas é preservado de propósito. Reativar junto com a tab.
+//
 //  Cada item pode ter múltiplos links de compra (links: [...]).
 //  Substitua os URLs pelos seus links de afiliado antes de publicar.
 //
