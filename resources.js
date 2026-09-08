@@ -34,7 +34,7 @@ const RESOURCES = [
   },
   {
     cat: "processo",
-    title: "COMO PRODUZIMOS 4 REELS PARA UM RESTAURANTE EM 1 DIA SÓ.",
+    title: "COMO PRODUZIMOS 4 REELS PARA UM RESTAURANTE EM 1 DIA SÓ",
     url: "https://www.youtube.com/watch?v=T70A0yeBNLU",
     description: "Produção acelerada de conteúdo: como planejar e executar 4 reels para um cliente em um único dia de gravação.",
     tags: ["produção", "behind the scenes", "processo criativo"],
@@ -55,42 +55,42 @@ const RESOURCES = [
   },
   {
     cat: "referencias",
-    title: "Young Miko - WASSUP (Official)",
+    title: "Young Miko - WASSUP",
     url: "https://www.youtube.com/watch?v=LEhTlLnOVDU",
     description: "Videoclipe oficial de Young Miko. Visual arrojado com referências de estética latina contemporânea.",
     tags: ["videoclipe", "direção"],
   },
   {
     cat: "referencias",
-    title: "NEMZZZ - PTSD (OFFICIAL VIDEO)",
+    title: "NEMZZZ - PTSD",
     url: "https://www.youtube.com/watch?v=oojBNXKtE9M",
     description: "Videoclipe oficial do NEMZZZ pra faixa PTSD, do mixtape Do Not Disturb. Vale assistir como referência de direção e estética de clipe de rap UK em formato curto, pouco mais de 2 minutos.",
     tags: ["videoclipe", "direção", "cinematografia"],
   },
   {
     cat: "referencias",
-    title: "Kidwild - Redemption Ft. Nemzzz [Music Video]",
+    title: "Kidwild - Redemption Ft. Nemzzz",
     url: "https://www.youtube.com/watch?v=MYHrk_6qky8",
     description: "Videoclipe de rap UK dirigido por donprod e dinperlis. Vale como referência de direção e iluminação em locação, com styling cuidado e visual coeso pra peça curta de 2:37.",
     tags: ["videoclipe", "direção", "iluminação"],
   },
   {
     cat: "referencias",
-    title: "The Next Chapter | The first US female fitness athlete of Red Bull",
+    title: "The Next Chapter: The first US female fitness athlete of Red Bull",
     url: "https://www.youtube.com/watch?v=i0KBwYzivmc",
     description: "Atleta de fitness da Red Bull conta em primeira pessoa como a pressão por ranking virou crise de saúde mental, a pausa de um ano e o reencontro com o esporte. Vale pela perspectiva sobre carreira e propósito.",
     tags: ["documentário", "cinematografia"],
   },
   {
     cat: "referencias",
-    title: "Interplanetary Criminal - No Time (feat. Sadboi) [Official Video]",
+    title: "Interplanetary Criminal - No Time (feat. Sadboi)",
     url: "https://www.youtube.com/watch?v=XVzxU5HNwtk",
     description: "Videoclipe oficial com estética visual marcante, na linha dos outros UK artists da coleção.",
     tags: ["videoclipe", "direção"],
   },
   {
     cat: "referencias",
-    title: "adidas Backyard Legends | The Greatest Football Story Ever Told",
+    title: "adidas Backyard Legends: The Greatest Football Story Ever Told",
     url: "https://www.youtube.com/watch?v=mJJY53qhJe0",
     description: "Curta de 5 min que conta um 3 contra 3 de rua como lenda urbana, narrada no carro a caminho do jogo. Vale pelo roteiro cômico, ritmo de diálogo e direção de elenco com Chalamet, Messi, Bellingham, Lamine Yamal e Trinity Rodman.",
     tags: ["publicidade", "direção", "cinematografia"],
@@ -104,7 +104,7 @@ const RESOURCES = [
   },
   {
     cat: "referencias",
-    title: "Ibeyi - Aset (Official Music Video)",
+    title: "Ibeyi - Aset",
     url: "https://www.youtube.com/watch?v=XwxA_oOzMDY",
     description: "Clipe da Ibeyi rodado em Cuba por Corry Van Rhijn e Roman Pichon Herrera, fotografia de Luis Armando Arteaga. Vale pela direção que mistura percussão e dança ao vivo com pipeline pesado de VFX e arte em IA. Referência de integração entre captação real e pós.",
     tags: ["videoclipe", "cinematografia"],
@@ -119,7 +119,7 @@ const RESOURCES = [
 
   {
     cat: "referencias",
-    title: "NEMZZZ - GASS FEAT. TRAVIS SCOTT [OFFICIAL VIDEO]",
+    title: "NEMZZZ - GASS feat. Travis Scott",
     url: "https://www.youtube.com/watch?v=veav1xL-NAc",
     description: "Clipe oficial de rap UK com Travis Scott, menos de dois minutos. Serve como referência de videoclipe de performance, com corte colado no beat e a cena sustentada pela presença dos artistas em quadro.",
     tags: ["videoclipe","direção","edição"],
@@ -142,21 +142,21 @@ const RESOURCES = [
   },
   {
     cat: "tutoriais",
-    title: "What is Dynamic Range? - Video Tech Explained",
+    title: "What is Dynamic Range?",
     url: "https://www.youtube.com/watch?v=FTXMx8ij_Nw",
     description: "Explica o que define o alcance dinâmico do sensor: full well capacity e noise floor, por que os stops úteis variam entre RED e ARRI, como a curva gama (log vs padrão) limita a imagem final e por que ISO nativo importa fora do RAW.",
     tags: ["cinematografia"],
   },
   {
     cat: "tutoriais",
-    title: "Color Spaces: Explained from the Ground Up -  Video Tech Explained",
+    title: "Color Spaces: Explained from the Ground Up",
     url: "https://www.youtube.com/watch?v=99v96TL-tuY",
     description: "Explica espaço de cor do zero: o que é cor, metamerismo, como os cones LMS viram o CIE 1931 XYZ, e por que Rec.709, DCI-P3 e Rec.2020 são RGB absolutos que só mudam os pontos primários. Bom pra entender o que rola por baixo do color grading.",
     tags: ["color grading"],
   },
   {
     cat: "tutoriais",
-    title: "Teoria da cor  [LIVES DA SULA]",
+    title: "Teoria da cor",
     url: "https://www.youtube.com/watch?v=VbJtLQPj4go",
     description: "Introdução à teoria da cor pra pintura digital: os três atributos (valor, matiz, saturação), o círculo cromático como simplificação de um espaço 3D, cores complementares, mistura de pigmento vs navegação digital e o gamut mask do James Gurney.",
     tags: ["color grading"],
@@ -289,7 +289,7 @@ const RESOURCES = [
   },
   {
     cat: "tutoriais",
-    title: "THE CLEANEST WAY To Grade Teal & Orange | Ozark Look | DaVinci Resolve Tutorial",
+    title: "THE CLEANEST WAY To Grade Teal & Orange | Ozark Look",
     url: "https://www.youtube.com/watch?v=SnqE7UtEErU",
     description: "Danny Gan ensina a aplicar o visual teal & orange no estilo Ozark no DaVinci Resolve usando nós paralelos, sem qualifiers, sem máscaras, com proteção limpa dos tons de pele.",
     tags: ["davinci resolve", "color grading"],
@@ -303,7 +303,7 @@ const RESOURCES = [
   },
   {
     cat: "processo",
-    title: "Behind the Track｜'Manchild' by Sabrina Carpenter",
+    title: "Behind the Track: 'Manchild' by Sabrina Carpenter",
     url: "https://www.youtube.com/watch?v=FZCVYCS8x5M",
     description: "O produtor Jack Antonoff destrincha a produção de 'Manchild' na Mix with the Masters. Equipamentos vintage como instrumentos, ecos de fita, e a filosofia de deixar espaço na mixagem.",
     tags: ["áudio", "produção", "behind the scenes"],
@@ -316,7 +316,7 @@ const RESOURCES = [
     tags: ["cinematografia", "análise", "behind the scenes"],
   },
   {
-    cat: "tutoriais",
+    cat: "processo",
     title: "How I Made Over $250,000 As A Filmmaker Last Year",
     url: "https://www.youtube.com/watch?v=MuXObj2ze9Y",
     description: "Análise financeira transparente de um cineasta: quanto entrou em cada frente (direção, fotografia, edição, renda passiva) e a diferença entre dias pagos e dias realmente trabalhados.",
@@ -326,7 +326,7 @@ const RESOURCES = [
   // ── Processo Criativo ────────────────────────────────────────
   {
     cat: "processo",
-    title: "Eduardo Marinho   Vencer, vencer, vencer, para que",
+    title: "Eduardo Marinho - Vencer, vencer, vencer, para que",
     url: "https://www.youtube.com/watch?v=j72UPe2qnV4",
     description: "Eduardo Marinho reflete sobre o sentido real de vencer e o que de fato importa na jornada criativa.",
     tags: ["mindset", "processo criativo", "carreira"],
@@ -354,7 +354,7 @@ const RESOURCES = [
   },
   {
     cat: "processo",
-    title: "Sobre terminar o que você começou | GusHorn",
+    title: "Sobre terminar o que você começou",
     url: "https://www.youtube.com/watch?v=RH7VZVKTzac",
     description: "Reflexão sobre a importância de terminar o que se começa, e por que a maioria dos projetos criativos morre no meio.",
     tags: ["mindset", "processo criativo"],
@@ -397,14 +397,14 @@ const RESOURCES = [
 
   {
     cat: "processo",
-    title: "EUROVISION SONG CONTEST 2026 • Behind the scenes • Production & Lighting Design • Part 1",
+    title: "EUROVISION SONG CONTEST 2026 • Behind the scenes • Production & Lighting Design",
     url: "https://www.youtube.com/watch?v=Oi-ItRJxFjw",
     description: "Cenógrafo, lighting designer e riggers contam como o limite de carga do teto virou um rig de 80 moving lights em winches cinéticos. Mostram também a rotina de programar 50 performances no grandMA3, dividindo o rig entre operadores e limpando luz plano a plano.",
     tags: ["behind the scenes","iluminação","produção","processo criativo"],
   },
   {
     cat: "processo",
-    title: "Bad Bunny Behind the Scenes Super Bowl Halftime Show! | NFL Stage Pass",
+    title: "Bad Bunny Behind the Scenes Super Bowl Halftime Show!",
     url: "https://www.youtube.com/watch?v=KDjATf-Ws5k",
     description: "Como a limitação de peso sobre o gramado matou o cenário em carros e virou 386 pessoas fantasiadas de cana e bananeira. Mostra também o ensaio offsite com os operadores de câmera reais e a montagem do palco inteiro em 8 minutos.",
     tags: ["behind the scenes","produção","direção","processo criativo"],
@@ -467,7 +467,7 @@ const RESOURCES = [
   },
   {
     cat: "processo",
-    title: "We went to see where film is made! Kodak Rochester Factory Tour - Shot on 35mm and 16mm Film",
+    title: "We went to see where film is made! Kodak Rochester Factory Tour",
     url: "https://www.youtube.com/watch?v=u_o8kpY7EEs",
     description: "Três dias dentro da fábrica da Kodak, do pellet de poliéster ao corte e perfuração no escuro, tudo gravado em 35mm e 16mm. Termina com entrevistas sobre sucessão de conhecimento, o estoque finito de câmeras usadas e por que o filme voltou a crescer.",
     tags: ["documentário","behind the scenes","cinematografia","produção"],
