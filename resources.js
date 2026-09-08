@@ -117,6 +117,14 @@ const RESOURCES = [
     tags: ["videoclipe", "cinematografia", "direção"],
   },
 
+  {
+    cat: "referencias",
+    title: "NEMZZZ - GASS feat. Travis Scott",
+    url: "https://www.youtube.com/watch?v=veav1xL-NAc",
+    description: "Clipe oficial de rap UK com Travis Scott, menos de dois minutos. Serve como referência de videoclipe de performance, com corte colado no beat e a cena sustentada pela presença dos artistas em quadro.",
+    tags: ["videoclipe","direção","edição"],
+  },
+
   // ── Tutoriais ────────────────────────────────────────────────
   {
     cat: "tutoriais",
@@ -385,6 +393,91 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=xWb-ZSx1IDw",
     description: "Amy Lee detalha a visão por trás do clipe dirigido por Jensen Noen. Conceito sobre redes sociais, atuar em velocidade dobrada para câmera lenta e 12 ratos treinados em cena.",
     tags: ["behind the scenes", "videoclipe", "direção"],
+  },
+
+  {
+    cat: "processo",
+    title: "Eurovision 2026: bastidores da produção e do design de luz",
+    url: "https://www.youtube.com/watch?v=Oi-ItRJxFjw",
+    description: "Cenógrafo, lighting designer e riggers contam como o limite de carga do teto virou um rig de 80 moving lights em winches cinéticos. Mostram também a rotina de programar 50 performances no grandMA3, dividindo o rig entre operadores e limpando luz plano a plano.",
+    tags: ["behind the scenes","iluminação","produção","processo criativo"],
+  },
+  {
+    cat: "processo",
+    title: "Bastidores do halftime show do Bad Bunny no Super Bowl",
+    url: "https://www.youtube.com/watch?v=KDjATf-Ws5k",
+    description: "Como a limitação de peso sobre o gramado matou o cenário em carros e virou 386 pessoas fantasiadas de cana e bananeira. Mostra também o ensaio offsite com os operadores de câmera reais e a montagem do palco inteiro em 8 minutos.",
+    tags: ["behind the scenes","produção","direção","processo criativo"],
+  },
+  {
+    cat: "processo",
+    title: "Por que pensadores divergentes vencem os gênios",
+    url: "https://www.youtube.com/watch?v=Js4NiTFq9Pw",
+    description: "David Epstein defende que amplitude ganha da especialização precoce em áreas instáveis, onde regra e feedback mudam. Usa Gunpei Yokoi, que criou o Game Boy juntando tecnologias baratas e já ultrapassadas, e fecha com uma ideia simples: compare seu trabalho com o de ontem.",
+    tags: ["mindset","carreira","processo criativo","entrevista"],
+  },
+  {
+    cat: "processo",
+    title: "Por que o Tonight Show é tão difícil de mixar",
+    url: "https://www.youtube.com/watch?v=emq2nevl898",
+    description: "Fred Zeller, mixer de produção do Tonight Show e dos 15 anos de Conan, abre a sala de controle: 24 mics sem fio, lavs na plateia pra pegar a risada isolada, DADpad pros efeitos e por que ele prefere andar no fader do Jimmy a comprimir tudo.",
+    tags: ["áudio","behind the scenes","produção","entrevista"],
+  },
+  {
+    cat: "processo",
+    title: "Stan Lee e a ideia que o chefe detestou",
+    url: "https://www.youtube.com/watch?v=5aR-5cNABAI",
+    description: "Stan Lee conta que o editor rejeitou o Homem-Aranha por ser aranha, adolescente e cheio de problemas pessoais. Ele enfiou o personagem na última edição de uma revista que já ia morrer. O recado, se a ideia é sua e você acredita nela, não deixe ninguém te convencer a largar.",
+    tags: ["mindset","processo criativo","carreira"],
+  },
+  {
+    cat: "processo",
+    title: "O conceito dos 2%: escada em vez de elevador",
+    url: "https://www.youtube.com/watch?v=Yrug2Fd9CWY",
+    description: "Ensaio sobre a ideia dos 2% do livro The Comfort Crisis: só 2% das pessoas pegam a escada quando tem elevador do lado. O argumento central é consistência acima de intensidade, porque hábito pequeno vira identidade e meta grande vira prazo que você fura em fevereiro.",
+    tags: ["mindset","processo criativo"],
+  },
+  {
+    cat: "processo",
+    title: "O vídeo que vai curar a sua procrastinação",
+    url: "https://www.youtube.com/watch?v=dh64bHIhbiU",
+    description: "Gabriel Saab argumenta que procrastinar é fuga emocional, não preguiça, e que trabalho criativo tem centenas de microdecisões que disparam esse escape. Propõe reduzir a fricção da tarefa, aumentar a dos gatilhos e trocar comportamento por identidade.",
+    tags: ["mindset","processo criativo","carreira"],
+  },
+  {
+    cat: "processo",
+    title: "Pare de ser espectador da própria vida",
+    url: "https://www.youtube.com/watch?v=13yIfxczLpc",
+    description: "Ela mede 4h30 de tela por dia e percebe listas infinitas de ideias salvas que nunca viraram nada, então força a mão: pinta, testa gouache, recria um plano que viu no Instagram. O insight, se você nunca se permite ser iniciante, nunca deixa de ser um.",
+    tags: ["mindset","processo criativo"],
+  },
+  {
+    cat: "processo",
+    title: "Por que pessoas burras se acham inteligentes",
+    url: "https://www.youtube.com/watch?v=0TjhggXdj-A",
+    description: "Pedro Loos destrincha o efeito Dunning-Kruger pela curva de confiança versus conhecimento, incluindo o fundo do poço onde mora a síndrome do impostor. Fecha com o paradoxo de Polanyi, a ideia de que sabemos mais do que conseguimos explicar, e o limite que isso impõe à IA.",
+    tags: ["mindset","carreira","processo criativo"],
+  },
+  {
+    cat: "processo",
+    title: "Ludwig dá aula na Streamer University",
+    url: "https://www.youtube.com/watch?v=k4sOrwMcOXc",
+    description: "Ludwig dá aula pra criadores iniciantes sobre funil de conteúdo, com números reais de uma live de 6 horas que virou VODs, vídeo longo e shorts. Defende gravar menos, reservar horas do dia pra ideação e tratar cada transmissão como matéria-prima de outros formatos.",
+    tags: ["carreira","negócios","mindset","processo criativo"],
+  },
+  {
+    cat: "processo",
+    title: "Onde o filme é feito: tour pela fábrica da Kodak em Rochester",
+    url: "https://www.youtube.com/watch?v=u_o8kpY7EEs",
+    description: "Três dias dentro da fábrica da Kodak, do pellet de poliéster ao corte e perfuração no escuro, tudo gravado em 35mm e 16mm. Termina com entrevistas sobre sucessão de conhecimento, o estoque finito de câmeras usadas e por que o filme voltou a crescer.",
+    tags: ["documentário","behind the scenes","cinematografia","produção"],
+  },
+  {
+    cat: "processo",
+    title: "Ser projecionista de The Odyssey em 70mm",
+    url: "https://www.youtube.com/watch?v=tN05nzk9oT8",
+    description: "Bastidores da montagem da cópia 70mm da Odisseia rolo a rolo, o tech check às 5 da manhã e a paranoia de não riscar o filme, já que risco em película é permanente. Fecha com a real: não existe escola nem trilha de formação pra virar projecionista hoje.",
+    tags: ["behind the scenes","carreira","produção"],
   },
 
 ];
