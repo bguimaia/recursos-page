@@ -544,4 +544,12 @@ const RESOURCES = [
     tags: ["mindset","processo criativo","análise"],
   },
 
+  {
+    cat: "processo",
+    title: "An old mans advice.",
+    url: "https://www.youtube.com/watch?v=9fvETktnaRw",
+    description: "Bernard Albertson, que já morou no banco de trás de um carro e aprendeu a ler e escrever sozinho, fala aos jovens em pouco mais de cinco minutos. Passa por não desistir, aprender sempre, assumir o próprio destino e a demanda futura por ofícios manuais como encanador e eletricista.",
+    tags: ["mindset","carreira"],
+  },
+
 ];
