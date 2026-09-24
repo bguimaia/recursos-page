@@ -520,4 +520,12 @@ const RESOURCES = [
     tags: ["direção","cinematografia"],
   },
 
+  {
+    cat: "tutoriais",
+    title: "Camera Shutters are Extremely Fast - The Slow Mo Guys",
+    url: "https://www.youtube.com/watch?v=8nyQWmflve4",
+    description: "Gav, do The Slow Mo Guys, filma obturadores a até 1,75 milhão de quadros por segundo. Cobre cortina mecânica e eletrônica, rolling shutter, sincronia de flash e High-Speed Sync, leaf shutter na Hasselblad X2D, readout do sensor e global shutter na Phantom TMX 7510.",
+    tags: ["cinematografia","iluminação"],
+  },
+
 ];
