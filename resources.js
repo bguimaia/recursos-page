@@ -536,4 +536,12 @@ const RESOURCES = [
     tags: ["carreira","mindset","documentário"],
   },
 
+  {
+    cat: "processo",
+    title: "Don't Try - The Philosophy of Charles Bukowski",
+    url: "https://www.youtube.com/watch?v=eMTDAHK-tkE",
+    description: "Pursuit of Wonder percorre a vida de Charles Bukowski, da infância com abuso e isolamento aos anos de trabalho braçal e rejeição até o sucesso depois dos 50. Lê o \"Don't Try\" da lápide como recusa ao esforço forçado por reconhecimento ou dinheiro e insistência em ir até o fim na vocação.",
+    tags: ["mindset","processo criativo","análise"],
+  },
+
 ];
