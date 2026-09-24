@@ -504,4 +504,12 @@ const RESOURCES = [
     tags: ["videoclipe","cinematografia","direção"],
   },
 
+  {
+    cat: "referencias",
+    title: "Sant – ISSO É EXATAMENTE O QUE SEPARA OS HOMENS DOS MENINOS [Short Film]",
+    url: "https://www.youtube.com/watch?v=QzeOiygitwM",
+    description: "Short film de lançamento do álbum de Sant, com grande referência de direção, roteiro, fotografia e montagem. Referência de curta de álbum com narrativa própria, com fotografia documental analógica revelada pelo Santo Lab.",
+    tags: ["cinematografia","direção","color grading"],
+  },
+
 ];
