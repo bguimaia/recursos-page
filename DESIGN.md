@@ -14,6 +14,7 @@ colors:
   cat-tut:     "#7AB898"
   cat-color:   "#7A9EC4"
   cat-proc:    "#A48FC4"
+  cat-mind:    "#C48AA8"
   cat-link:    "#C4B07A"
   cat-dl:      "#7AC4AA"
 typography:

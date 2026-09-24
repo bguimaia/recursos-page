@@ -1,7 +1,7 @@
 // ============================================================
 //  RESOURCES — embaralhados a cada visita.
 //
-//  Categorias: "referencias" | "tutoriais" | "processo"
+//  Categorias: "referencias" | "tutoriais" | "processo" | "mindset"
 //  Tipo: auto-detectado pela URL (YouTube = vídeo, resto = link)
 //        Para imagens ou downloads, adicione: type: "image" | "download"
 //
@@ -214,28 +214,28 @@ const RESOURCES = [
     cat: "tutoriais",
     title: "The \"Geometry\" of Colours",
     url: "https://www.youtube.com/watch?v=7KYwi2F5Ce4",
-    description: "Como a geometria dos espaços de cor define as relações entre cores. Uma perspectiva matemática e visual.",
+    description: "Do disco de Newton ao espaço okLab: como os modelos matemáticos de cor (XYZ, Lab, elipses de MacAdam) tentam representar a forma como o olho percebe matiz, saturação e brilho.",
     tags: ["color grading"],
   },
   {
     cat: "tutoriais",
     title: "Why The Bear Gets In Your Head",
     url: "https://www.youtube.com/watch?v=Lca_XEoO4b8",
-    description: "Análise do que torna The Bear tão impactante: edição, direção e som trabalhando juntos de forma cirúrgica.",
+    description: "Como os montadores de The Bear usam planos de reação, tomadas longas sem corte e a trilha sonora para construir tensão e o arco emocional dos personagens sem depender de diálogo.",
     tags: ["análise", "edição", "direção"],
   },
   {
     cat: "tutoriais",
     title: "How To Get a Commercial Look In DaVinci Resolve",
     url: "https://www.youtube.com/watch?v=gZXIfcm2KR8",
-    description: "Workflow completo para alcançar um look publicitário limpo e polido direto no DaVinci Resolve.",
+    description: "Como montar um grade publicitário no Resolve: CST sem LUT de saída, contraste e exposição para separar tons, seleções de pele e fundo, LUT sutil da Lens Distortions e glow em soft light no acabamento.",
     tags: ["davinci resolve", "color grading", "publicidade"],
   },
   {
     cat: "tutoriais",
     title: "How To Edit Documentaries like James Jani",
     url: "https://www.youtube.com/watch?v=bwz-jLZz2w8",
-    description: "Como estruturar, narrar e editar documentários no estilo de James Jani: ritmo, storytelling e recursos visuais.",
+    description: "James Jani detalha seu processo de edição de documentários: storyboard com a trilha definida antes do corte, motivos visuais recorrentes (contagem regressiva, quebra-cabeça) para manter a tensão e briefing próprio para a equipe de motion graphics.",
     tags: ["edição", "documentário", "processo criativo"],
   },
   {
@@ -249,7 +249,7 @@ const RESOURCES = [
     cat: "tutoriais",
     title: "Why You Should Care About Lighting Ratios",
     url: "https://www.youtube.com/watch?v=U4egvCgW7qc",
-    description: "Por que dominar ratios de iluminação muda completamente a qualidade e o controle sobre a sua imagem.",
+    description: "Como calcular e aplicar proporções de iluminação entre key e fill em stops, do 128:1 ao 2:1, usando luxímetro para manter consistência entre planos e cenas.",
     tags: ["iluminação", "cinematografia"],
   },
   {
@@ -298,7 +298,7 @@ const RESOURCES = [
     cat: "tutoriais",
     title: "Lighting spaces. Not faces!",
     url: "https://www.youtube.com/watch?v=ptyewwtjBpo",
-    description: "Blaine Westropp defende iluminar o ambiente em vez do rosto: entender a motivação da luz no espaço resulta em imagens mais naturais, imersivas e cinematográficas.",
+    description: "Teste prático mostrando como montar luz motivada num ambiente: chave difundida por fora da janela, luz de mesa e contraluz testados um a um, provando que iluminar o espaço em vez do rosto entrega resultado mais natural e cinematográfico.",
     tags: ["iluminação", "cinematografia"],
   },
   {
@@ -312,55 +312,55 @@ const RESOURCES = [
     cat: "processo",
     title: "Why Christopher Nolan shot \"The Odyssey\" on IMAX film",
     url: "https://www.youtube.com/watch?v=1GEqDZ3hQSo",
-    description: "Bastidores do filme de Christopher Nolan rodado inteiro em película IMAX. Invólucro à prova de som de 135kg, montagem manual no FotoKem e correção de cor fotoquímica tradicional.",
+    description: "Bastidores do filme de Christopher Nolan rodado inteiro em película IMAX. Invólucro à prova de som de 136kg para a câmera, montagem manual do negativo no FotoKem e correção de cor fotoquímica, sem digital.",
     tags: ["cinematografia", "análise", "behind the scenes"],
   },
   {
     cat: "processo",
     title: "How I Made Over $250,000 As A Filmmaker Last Year",
     url: "https://www.youtube.com/watch?v=MuXObj2ze9Y",
-    description: "Análise financeira transparente de um cineasta: quanto entrou em cada frente (direção, fotografia, edição, renda passiva) e a diferença entre dias pagos e dias realmente trabalhados.",
+    description: "Cineasta freelancer abre os números reais do ano: direção e fotografia juntas somaram 65% do faturamento, com 27.871 libras só dirigindo e 22.641 editando, e a diferença entre dias com cachê fechado e dias efetivamente trabalhados.",
     tags: ["carreira", "negócios"],
   },
 
   // ── Processo Criativo ────────────────────────────────────────
   {
-    cat: "processo",
+    cat: "mindset",
     title: "Eduardo Marinho - Vencer, vencer, vencer, para que",
     url: "https://www.youtube.com/watch?v=j72UPe2qnV4",
-    description: "Eduardo Marinho reflete sobre o sentido real de vencer e o que de fato importa na jornada criativa.",
+    description: "Eduardo Marinho conta por que abandonou a competição depois de ver a tristeza dos derrotados nas disputas do Exército, e como a reflexão sobre pacientes terminais o convenceu de que o que importa são os afetos, não o patrimônio.",
     tags: ["mindset", "processo criativo", "carreira"],
   },
   {
     cat: "processo",
     title: "Behind the Scenes of Lil Yachty's \"Murda\" Music Video",
     url: "https://www.youtube.com/watch?v=uGRfuxmK6ls",
-    description: "Bastidores completos da produção do videoclipe 'Murda' de Lil Yachty: decisões criativas e de set.",
+    description: "Bastidores do clipe 'Murda' de Lil Yachty, rodado em película Ultra 16 com stock 500T. Cole Bennett mostra por que deixa espaço pro imprevisto no set e prefere efeito prático, como a plataforma real pro soco no sino, a CGI puro.",
     tags: ["behind the scenes", "videoclipe", "produção", "processo criativo"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "Observar e Absorver - Eduardo Marinho (Documentário Completo)",
     url: "https://www.youtube.com/watch?v=I7arqW5luKc",
-    description: "Documentário completo de Eduardo Marinho sobre o ato de observar o mundo como combustível para a criatividade.",
+    description: "Documentário de 71 minutos sobre a trajetória de Eduardo Marinho: da fuga da vida militar e do abandono da competição até a criação do conceito 'observar e absorver' que virou sua obra.",
     tags: ["documentário", "mindset", "processo criativo"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "how i fixed my attention span",
     url: "https://www.youtube.com/watch?v=vYaNiC4kchg",
     description: "Como reconquistar foco e atenção em um mundo cheio de distrações. Estratégias práticas e honestas.",
     tags: ["mindset", "processo criativo"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "Sobre terminar o que você começou",
     url: "https://www.youtube.com/watch?v=RH7VZVKTzac",
     description: "Reflexão sobre a importância de terminar o que se começa, e por que a maioria dos projetos criativos morre no meio.",
     tags: ["mindset", "processo criativo"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "Navigating the Matrix",
     url: "https://www.youtube.com/watch?v=Pdp3p23P-TI",
     description: "Casey Neistat propõe uma reflexão sobre produtividade através de uma 'Matriz de Prioridades' dividida em quatro quadrantes, e por que fazer muito não significa realizar de verdade.",
@@ -410,7 +410,7 @@ const RESOURCES = [
     tags: ["behind the scenes","produção","direção","processo criativo"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "Why divergent thinkers beat geniuses in the real world | David Epstein",
     url: "https://www.youtube.com/watch?v=Js4NiTFq9Pw",
     description: "David Epstein defende que amplitude ganha da especialização precoce em áreas instáveis, onde regra e feedback mudam. Usa Gunpei Yokoi, que criou o Game Boy juntando tecnologias baratas e já ultrapassadas, e fecha com uma ideia simples: compare seu trabalho com o de ontem.",
@@ -424,35 +424,35 @@ const RESOURCES = [
     tags: ["áudio","behind the scenes","produção","entrevista"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "What if it actually works out?",
     url: "https://www.youtube.com/watch?v=5aR-5cNABAI",
     description: "Stan Lee conta que o editor rejeitou o Homem-Aranha por ser aranha, adolescente e cheio de problemas pessoais. Ele enfiou o personagem na última edição de uma revista que já ia morrer. O recado, se a ideia é sua e você acredita nela, não deixe ninguém te convencer a largar.",
     tags: ["mindset","processo criativo","carreira"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "the best piece of advice I've ever received",
     url: "https://www.youtube.com/watch?v=Yrug2Fd9CWY",
     description: "Ensaio sobre a ideia dos 2% do livro The Comfort Crisis: só 2% das pessoas pegam a escada quando tem elevador do lado. O argumento central é consistência acima de intensidade, porque hábito pequeno vira identidade e meta grande vira prazo que você fura em fevereiro.",
     tags: ["mindset","processo criativo"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "O vídeo que vai curar a sua PROCRASTINAÇÃO",
     url: "https://www.youtube.com/watch?v=dh64bHIhbiU",
     description: "Gabriel Saab argumenta que procrastinar é fuga emocional, não preguiça, e que trabalho criativo tem centenas de microdecisões que disparam esse escape. Propõe reduzir a fricção da tarefa, aumentar a dos gatilhos e trocar comportamento por identidade.",
     tags: ["mindset","processo criativo","carreira"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "stop being an audience member of your own life",
     url: "https://www.youtube.com/watch?v=13yIfxczLpc",
     description: "Ela mede 4h30 de tela por dia e percebe listas infinitas de ideias salvas que nunca viraram nada, então força a mão: pinta, testa gouache, recria um plano que viu no Instagram. O insight, se você nunca se permite ser iniciante, nunca deixa de ser um.",
     tags: ["mindset","processo criativo"],
   },
   {
-    cat: "processo",
+    cat: "mindset",
     title: "Por que pessoas BURRAS se acham INTELIGENTES?",
     url: "https://www.youtube.com/watch?v=0TjhggXdj-A",
     description: "Pedro Loos destrincha o efeito Dunning-Kruger pela curva de confiança versus conhecimento, incluindo o fundo do poço onde mora a síndrome do impostor. Fecha com o paradoxo de Polanyi, a ideia de que sabemos mais do que conseguimos explicar, e o limite que isso impõe à IA.",

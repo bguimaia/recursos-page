@@ -15,7 +15,7 @@
   <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
   <meta property="og:type" content="website">
@@ -84,6 +84,7 @@
       --cat-tut:   #7AB898;
       --cat-color: #7A9EC4;
       --cat-proc:  #A48FC4;
+      --cat-mind:  #C48AA8;
       --cat-link:  #C4B07A;
       --cat-dl:    #7AC4AA;
 
@@ -377,7 +378,7 @@
       background: var(--accent);
       color: #111;
       font-size: .65rem;
-      font-weight: 800;
+      font-weight: 700;
       border-radius: 999px;
       padding: 1px 6px;
       display: none;
@@ -414,6 +415,7 @@
     .pill.tutoriais  { background: rgba(122,184,152,.06); border-color: rgba(122,184,152,.25); color: var(--cat-tut); }
     .pill.color-cam  { background: rgba(122,158,196,.06); border-color: rgba(122,158,196,.25); color: var(--cat-color); }
     .pill.processo   { background: rgba(164,143,196,.06); border-color: rgba(164,143,196,.25); color: var(--cat-proc); }
+    .pill.mindset    { background: rgba(196,138,168,.06); border-color: rgba(196,138,168,.25); color: var(--cat-mind); }
     .pill.links      { background: rgba(196,176,122,.06); border-color: rgba(196,176,122,.25); color: var(--cat-link); }
     .pill.download   { background: rgba(122,196,170,.06); border-color: rgba(122,196,170,.25); color: var(--cat-dl); }
 
@@ -422,6 +424,7 @@
     .pill.active.tutoriais  { background: rgba(122,184,152,.14); border-color: var(--cat-tut);   color: var(--cat-tut); }
     .pill.active.color-cam  { background: rgba(122,158,196,.14); border-color: var(--cat-color); color: var(--cat-color); }
     .pill.active.processo   { background: rgba(164,143,196,.14); border-color: var(--cat-proc);  color: var(--cat-proc); }
+    .pill.active.mindset    { background: rgba(196,138,168,.14); border-color: var(--cat-mind);  color: var(--cat-mind); }
     .pill.active.links      { background: rgba(196,176,122,.14); border-color: var(--cat-link);  color: var(--cat-link); }
     .pill.active.download   { background: rgba(122,196,170,.14); border-color: var(--cat-dl);    color: var(--cat-dl); }
 
@@ -820,6 +823,8 @@
       padding-right: max(clamp(20px, 5vw, 60px), env(safe-area-inset-right));
     }
 
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
     /* ── TOUCH TARGETS — coarse pointer (touch devices) ── */
     @media (pointer: coarse) {
       .footer-social  { padding: 11px 14px; min-height: 44px; }
@@ -827,6 +832,7 @@
       .gear-link      { padding: 10px 14px; min-height: 44px; }
       .pill           { padding: 11px 18px; min-height: 44px; }
       .tag            { padding: 10px 16px; min-height: 44px; }
+      .card-tag, .modal-tag { padding: 10px 14px; min-height: 44px; }
     }
 
     /* ── HOVER — only on devices that support it ── */
@@ -846,6 +852,7 @@
 <!-- HEADER -->
 <header>
   <div class="header-left">
+    <h1 class="sr-only">MAIA - Recursos Criativos</h1>
     <div class="logo" role="button" tabindex="0" aria-label="MAiA — limpar filtros e voltar ao início"><img src="logo.png" alt=""></div>
   </div>
   <div class="header-center">
@@ -891,6 +898,7 @@
       <div class="pill tutoriais" data-cat="tutoriais" role="button" tabindex="0" aria-pressed="false">Tutoriais</div>
       <div class="pill color-cam" data-cat="color" role="button" tabindex="0" aria-pressed="false">Color & Câmera</div>
       <div class="pill processo" data-cat="processo" role="button" tabindex="0" aria-pressed="false">Processo Criativo</div>
+      <div class="pill mindset" data-cat="mindset" role="button" tabindex="0" aria-pressed="false">Mindset</div>
       <div class="pill links" data-cat="links" role="button" tabindex="0" aria-pressed="false">Links</div>
       <div class="pill download" data-cat="download" role="button" tabindex="0" aria-pressed="false">Download</div>
       <button class="tag-toggle" id="tag-toggle">
@@ -931,7 +939,7 @@
         <path d="M18 6 6 18M6 6l12 12"/>
       </svg>
     </button>
-    <div class="modal-box" id="modal-box">
+    <div class="modal-box">
       <div id="modal-iframe-wrap" style="display:none"></div>
       <div id="modal-img-wrap"    style="display:none"></div>
       <div class="modal-info" id="modal-info"></div>
@@ -983,6 +991,16 @@
     ...shuffle(RESOURCES),
   ];
 
+  // ── Helpers ──────────────────────────────────────────────────
+  // Todo texto de dado entra em innerHTML/atributo via esc(). Títulos reais têm aspas.
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const safeUrl = u => /^https?:\/\//i.test(u || '') ? esc(u) : '#';
+  const norm = s => (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const onActivate = fn => e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fn(); }
+  };
+
   // ── YouTube helpers ──────────────────────────────────────────
   function ytId(url) {
     const m = url.match(/(?:v=|youtu\.be\/|embed\/)([a-zA-Z0-9_-]{11})/);
@@ -1006,7 +1024,8 @@
     referencias: r => r.cat === 'referencias',
     tutoriais:   r => r.cat === 'tutoriais',
     color:       r => r.tags.includes('color grading') || r.tags.includes('cinematografia'),
-    processo:    r => r.cat === 'processo' || r.tags.includes('processo criativo'),
+    processo:    r => r.cat === 'processo' || (r.cat !== 'mindset' && r.tags.includes('processo criativo')),
+    mindset:     r => r.cat === 'mindset',
     links:       r => inferType(r) === 'link',
     download:    r => inferType(r) === 'download',
   };
@@ -1046,10 +1065,16 @@
         render();
       }
       el.addEventListener('click', toggleTag);
-      el.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTag(); }
-      });
+      el.addEventListener('keydown', onActivate(toggleTag));
       tagPillsEl.appendChild(el);
+    });
+  }
+
+  function syncPills() {
+    document.querySelectorAll('#type-pills .pill').forEach(p => {
+      const active = p.dataset.cat === activeCategory;
+      p.classList.toggle('active', active);
+      p.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
   }
 
@@ -1058,11 +1083,7 @@
     activeCategory = cat;
     activeTags.clear();
     updateTagBadge();
-    document.querySelectorAll('#type-pills .pill').forEach(p => {
-      const active = p.dataset.cat === activeCategory;
-      p.classList.toggle('active', active);
-      p.setAttribute('aria-pressed', active ? 'true' : 'false');
-    });
+    syncPills();
     buildTagPills();
     render();
     if (typeof gtag !== 'undefined') gtag('event', 'filter_category', { category: cat });
@@ -1070,9 +1091,7 @@
 
   document.querySelectorAll('#type-pills .pill').forEach(pill => {
     pill.addEventListener('click', () => activatePill(pill.dataset.cat));
-    pill.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activatePill(pill.dataset.cat); }
-    });
+    pill.addEventListener('keydown', onActivate(() => activatePill(pill.dataset.cat)));
   });
 
   // ── Logo reset ───────────────────────────────────────────────
@@ -1081,11 +1100,7 @@
     activeTags.clear();
     searchQ = '';
     document.getElementById('search').value = '';
-    document.querySelectorAll('#type-pills .pill').forEach(p => {
-      const isAll = p.dataset.cat === 'all';
-      p.classList.toggle('active', isAll);
-      p.setAttribute('aria-pressed', isAll ? 'true' : 'false');
-    });
+    syncPills();
     setTagPanelOpen(false);
     updateTagBadge();
     buildTagPills();
@@ -1094,23 +1109,22 @@
   }
   const logoEl = document.querySelector('.logo');
   logoEl.addEventListener('click', resetAll);
-  logoEl.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); resetAll(); }
-  });
+  logoEl.addEventListener('keydown', onActivate(resetAll));
 
   // ── Search ───────────────────────────────────────────────────
+  let searchTimer;
   document.getElementById('search').addEventListener('input', e => {
-    searchQ = e.target.value.toLowerCase().trim();
-    render();
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => { searchQ = norm(e.target.value).trim(); render(); }, 180);
   });
 
   // ── Filter ───────────────────────────────────────────────────
   // Aplica só tag + busca (a categoria já foi filtrada em render, p/ reusar o total)
   function matchesTagsAndSearch(r) {
     if (activeTags.size > 0 && ![...activeTags].every(tag => r.tags.includes(tag))) return false;
-    if (searchQ && !r.title.toLowerCase().includes(searchQ) &&
-        !(r.description || '').toLowerCase().includes(searchQ) &&
-        !r.tags.some(tag => tag.toLowerCase().includes(searchQ))) return false;
+    if (searchQ && !norm(r.title).includes(searchQ) &&
+        !norm(r.description).includes(searchQ) &&
+        !r.tags.some(tag => norm(tag).includes(searchQ))) return false;
     return true;
   }
 
@@ -1134,7 +1148,7 @@
     card.innerHTML = `
       <div class="card-thumb">
         ${t
-          ? `<img src="${t}" alt="" loading="lazy" onerror="this.outerHTML='<div class=\\'thumb-placeholder\\'>${TYPE_PLACEHOLDER[type]}</div>'">`
+          ? `<img src="${safeUrl(t)}" alt="" loading="lazy">`
           : `<div class="thumb-placeholder">${TYPE_PLACEHOLDER[type]}</div>`
         }
         ${r._pinned ? '<span class="pin-badge" aria-hidden="true">📌</span>' : ''}
@@ -1142,17 +1156,20 @@
         <span class="type-badge ${type}" aria-hidden="true">${TYPE_ICON[type]} ${type}</span>
       </div>
       <div class="card-body">
-        <div class="card-title">${r.title}</div>
-        ${r.description ? `<div class="card-desc">${r.description}</div>` : ''}
-        <div class="card-tags">${r.tags.map(tag => `<button class="card-tag" data-tag="${tag}" type="button">${tag}</button>`).join('')}</div>
+        <div class="card-title">${esc(r.title)}</div>
+        ${r.description ? `<div class="card-desc">${esc(r.description)}</div>` : ''}
+        <div class="card-tags">${r.tags.map(tag => `<button class="card-tag" data-tag="${esc(tag)}" type="button">${esc(tag)}</button>`).join('')}</div>
       </div>`;
+    const img = card.querySelector('.card-thumb img');
+    if (img) img.addEventListener('error', () => {
+      img.outerHTML = `<div class="thumb-placeholder">${TYPE_PLACEHOLDER[type]}</div>`;
+    }, { once: true });
     card.querySelectorAll('.card-tag').forEach(el => {
       el.addEventListener('click', e => { e.stopPropagation(); activateTag(el.dataset.tag); });
     });
     card.addEventListener('click', () => openModal(r));
     card.addEventListener('keydown', e => {
-      if (e.target !== card) return; // tag buttons handle their own keys
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(r); }
+      if (e.target === card) onActivate(() => openModal(r))(e); // tags cuidam das próprias teclas
     });
     return card;
   }
@@ -1160,13 +1177,13 @@
   // ── Render ───────────────────────────────────────────────────
   const CATEGORY_LABELS = {
     all: 'Todos', referencias: 'Referências', tutoriais: 'Tutoriais',
-    color: 'Color & Câmera', processo: 'Processo Criativo',
+    color: 'Color & Câmera', processo: 'Processo Criativo', mindset: 'Mindset',
     links: 'Links', download: 'Download',
   };
   // Categoria → CSS var de cor (fonte única no :root). Usado no stats bar (wayfinding).
   const CATEGORY_VARS = {
     referencias: '--cat-ref', tutoriais: '--cat-tut', color: '--cat-color',
-    processo: '--cat-proc', links: '--cat-link', download: '--cat-dl',
+    processo: '--cat-proc', mindset: '--cat-mind', links: '--cat-link', download: '--cat-dl',
   };
 
   const gridEl  = document.getElementById('grid');
@@ -1179,8 +1196,8 @@
     const catVar     = CATEGORY_VARS[activeCategory];
     const catLabel   = activeCategory === 'all' ? ''
       : ` · <span class="stats-cat"${catVar ? ` style="color:var(${catVar})"` : ''}>${CATEGORY_LABELS[activeCategory]}</span>`;
-    const tagLabel   = activeTags.size ? ` · ${activeTags.size} tag${activeTags.size > 1 ? 's' : ''}` : '';
-    const searchLabel = searchQ ? ` · "${searchQ}"` : '';
+    const tagLabel   = activeTags.size ? ` · ${[...activeTags].map(esc).join(' + ')}` : '';
+    const searchLabel = searchQ ? ` · "${esc(document.getElementById('search').value.trim())}"` : '';
     statsEl.innerHTML = `<span class="stats-count">${list.length}</span> de ${total} recursos${catLabel}${tagLabel}${searchLabel}`;
 
     if (list.length === 0) {
@@ -1237,22 +1254,23 @@
       const id = ytId(r.url);
       if (id) {
         iframeWrap.style.display = 'block';
-        iframeWrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" allow="autoplay; fullscreen" title="${r.title}"></iframe>`;
+        iframeWrap.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" allow="autoplay; fullscreen" referrerpolicy="strict-origin-when-cross-origin" title="${esc(r.title)}"></iframe>`;
       }
     } else if (type === 'image') {
       imgWrap.style.display = 'block';
-      imgWrap.innerHTML = `<img src="${r.url}" alt="${r.title}">`;
+      imgWrap.innerHTML = `<img src="${safeUrl(r.url)}" alt="${esc(r.title)}">`;
     }
 
+    const rel = r.tags.includes('afiliado') ? 'noopener sponsored' : 'noopener';
     const actionHTML =
-      type === 'link'     ? `<a class="modal-action link"     href="${r.url}" target="_blank" rel="noopener">↗ Abrir link</a>` :
-      type === 'download' ? `<a class="modal-action download" href="${r.url}" target="_blank" rel="noopener">Baixar ↗</a>` : '';
+      type === 'link'     ? `<a class="modal-action link"     href="${safeUrl(r.url)}" target="_blank" rel="${rel}">↗ Abrir link</a>` :
+      type === 'download' ? `<a class="modal-action download" href="${safeUrl(r.url)}" target="_blank" rel="${rel}">Baixar ↗</a>` : '';
 
     modalInfo.innerHTML = `
-      <div class="modal-title" id="modal-title-text">${r.title}</div>
-      ${r.description ? `<div class="modal-desc">${r.description}</div>` : ''}
+      <div class="modal-title" id="modal-title-text">${esc(r.title)}</div>
+      ${r.description ? `<div class="modal-desc">${esc(r.description)}</div>` : ''}
       <div class="modal-tags">${r.tags.map(tag =>
-        `<button class="modal-tag" data-tag="${tag}" type="button">${tag}</button>`
+        `<button class="modal-tag" data-tag="${esc(tag)}" type="button">${esc(tag)}</button>`
       ).join('')}</div>
       ${actionHTML}`;
 
@@ -1342,15 +1360,15 @@
     card.innerHTML = `
       <div class="gear-thumb">
         ${item.thumbnail
-          ? `<img src="${item.thumbnail}" alt="${item.title}" loading="lazy">`
+          ? `<img src="${safeUrl(item.thumbnail)}" alt="${esc(item.title)}" loading="lazy">`
           : `<div class="thumb-placeholder">📦</div>`}
       </div>
       <div class="gear-body">
-        <div class="gear-title">${item.title}</div>
-        ${item.description ? `<div class="gear-desc">${item.description}</div>` : ''}
-        ${item.note ? `<div class="gear-note">"${item.note}"</div>` : ''}
+        <div class="gear-title">${esc(item.title)}</div>
+        ${item.description ? `<div class="gear-desc">${esc(item.description)}</div>` : ''}
+        ${item.note ? `<div class="gear-note">"${esc(item.note)}"</div>` : ''}
         <div class="gear-links">
-          ${item.links.map(l => `<a class="gear-link" href="${l.url}" target="_blank" rel="noopener sponsored" data-platform="${l.label}" data-product="${item.title}">${l.label} ↗</a>`).join('')}
+          ${item.links.map(l => `<a class="gear-link" href="${safeUrl(l.url)}" target="_blank" rel="noopener sponsored" data-platform="${esc(l.label)}" data-product="${esc(item.title)}">${esc(l.label)} ↗</a>`).join('')}
         </div>
       </div>`;
     // GA4 — affiliate click
