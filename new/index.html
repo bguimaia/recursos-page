@@ -403,6 +403,9 @@
   footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
   footer nav a { text-decoration: none; color: var(--ink-soft); }
   footer nav a:hover { color: var(--ink-strong); }
+  /* aviso de medição (LGPD): o que é coletado, pra quê, e como ficar de fora */
+  footer .privacy { flex-basis: 100%; font-size: 0.75rem; }
+  footer .privacy a { color: var(--ink-soft); text-underline-offset: 3px; }
 
   /* menos movimento não é zero feedback: vira esmaecer curto, sem deslocamento nem elástico */
   @media (prefers-reduced-motion: reduce) {
@@ -544,6 +547,7 @@
       <a href="https://youtube.com/@bguimaia" target="_blank" rel="noopener">YouTube ↗</a>
       <a href="https://linkedin.com/in/bgmaia" target="_blank" rel="noopener">LinkedIn ↗</a>
     </nav>
+    <p class="privacy">Uso Google Analytics pra saber quais vídeos são abertos. Sem anúncio e sem perfil de ninguém. <a href="https://tools.google.com/dlpage/gaoptout?hl=pt-BR" target="_blank" rel="noopener">Como ficar de fora ↗</a></p>
   </div>
 </footer>
 
