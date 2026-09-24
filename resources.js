@@ -512,4 +512,12 @@ const RESOURCES = [
     tags: ["cinematografia","direção","color grading"],
   },
 
+  {
+    cat: "referencias",
+    title: "Depois do Fim (After the End) - Short Film",
+    url: "https://www.youtube.com/watch?v=aXQoKVBPrOY",
+    description: "Curta sobre Ana e Théo, ex-casal que se reencontra depois de seis anos sem se falar, quase todo passado dentro de um carro durante uma carona. A conversa vai do casual ao término, às relações atuais e ao que poderia ter sido, e fecha com \"Última Vez\", de Tim Bernardes.",
+    tags: ["direção","cinematografia"],
+  },
+
 ];
