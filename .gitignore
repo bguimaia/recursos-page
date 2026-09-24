@@ -10,3 +10,10 @@ _transcripts/
 # OS / editor noise
 .DS_Store
 Thumbs.db
+
+# Inbox (Worker): estado local do agente tem notas, resumos e nomes de visitantes. Nunca no repo público.
+_inbox/_agent/
+.wrangler/
+.dev.vars*
+__pycache__/
+node_modules/

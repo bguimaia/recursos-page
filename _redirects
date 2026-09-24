@@ -1,0 +1,9 @@
+# Netlify: só o site é público. Código do inbox, docs internas e arquivos de trabalho respondem 404.
+# (O domínio é servido pelo Netlify; tudo que está no repo viraria URL sem estas regras.)
+/_inbox/*        /404  404!
+/docs/*          /404  404!
+/prototipo/gen-meta.js  /404  404!
+/CLAUDE.md       /404  404!
+/PRODUCT.md      /404  404!
+/DESIGN.md       /404  404!
+/.gitignore      /404  404!

@@ -1,6 +1,8 @@
 # Inbox Recursos — spec v1
 
-Status: **aguardando aprovação**. Nada construído ainda.
+> Histórico. O fluxo atual (24/09/2026): o `/add` só captura; rascunho, triagem e publicação acontecem numa sessão do Claude Code ("revisa o inbox", ver CLAUDE.md). Sem agente de segunda, sem tela Revisar, sem token do GitHub no Worker. Detalhes em docs/inbox-v2-proposta.md.
+
+Status original: **aguardando aprovação**. Nada construído ainda.
 
 ## Problema
 
@@ -31,9 +33,12 @@ Um Worker serve a página e a API. Estado no KV (privado). Nada do backlog toca 
 | `GET /api/items?status=` | lista |
 | `PATCH /api/items/:id` | edita rascunho, muda status |
 | `POST /api/items/:id/approve` | insere entrada em `resources.js` via GitHub API, marca `publicado` |
+| `POST /api/suggest` | **pública**: formulário "Indique" do site (`url`, `note`, `by`) |
 
-Item: `{id, url, title, note, cat, tags, description, status, createdAt}`.
-Status: `novo → rascunhado → publicado | rejeitado`. "Adiar" só mantém em `rascunhado`.
+Item: `{id, url, title, note, cat, tags, description, by?, status, createdAt}`.
+Status: `sugerido → novo → rascunhado → publicado | rejeitado`. "Adiar" só mantém em `rascunhado`.
+
+Indicação pública: só aceita origem `resources.bgmaia.com` (e `localhost:3456` do protótipo), campo-isca, 5 por hora por IP, teto de 100 esperando triagem. Entra como `sugerido`, que o agente ignora; na sessão "revisa o inbox" o Bruno aceita (vira `novo`) ou recusa. `by` é o crédito ("indicado por") e vai pro `resources.js` na aprovação. Se aparecer spam que passe disso, próximo passo é Turnstile.
 
 Duplicata: `POST` recusa URL que já está no backlog ou em `resources.js`.
 
