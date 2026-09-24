@@ -480,4 +480,12 @@ const RESOURCES = [
     tags: ["behind the scenes","carreira","produção"],
   },
 
+  {
+    cat: "referencias",
+    title: "Shaboozey - High Noon ft. Gunna",
+    url: "https://www.youtube.com/watch?v=D3CzQPnTfzI",
+    description: "Clipe de faroeste moderno de Shaboozey com Gunna, rodado numa cidade cenográfica de western. Alterna saloon e rua de terra sob sol forte, figurino country urbano e montagem que troca cor e preto e branco no ritmo da faixa. Referência de narrativa de gênero em videoclipe.",
+    tags: ["videoclipe","cinematografia","direção"],
+  },
+
 ];
