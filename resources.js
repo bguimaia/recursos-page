@@ -496,4 +496,12 @@ const RESOURCES = [
     tags: ["cinematografia","documentário","publicidade"],
   },
 
+  {
+    cat: "referencias",
+    title: "Ovrkast. - Small Talk ft. Samara Cyn",
+    url: "https://www.youtube.com/watch?v=iXMmlpL4xQE",
+    description: "Clipe de Small Talk, do rapper e produtor Ovrkast. com participação de Samara Cyn, dirigido por Mitch Ritter. Referência de fotografia em videoclipe de rap.",
+    tags: ["videoclipe","cinematografia","direção"],
+  },
+
 ];
