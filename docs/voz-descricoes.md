@@ -26,6 +26,7 @@ Descreve. Diz o que é, quem fez e o que tem dentro, com o detalhe concreto de c
 - **referencias:** abre dizendo o que é a peça e de quem ("Clipe da Ibeyi rodado em Cuba por...", "Spec ad de 30s da Tenfold para a On"). Depois, o que olhar: "Vale pela...", "Referência de...". Os elementos citados têm que ser específicos daquela peça.
 - **tutoriais:** abre com verbo ou com quem ensina ("Explica...", "Monta...", "Danny Gan ensina..."). Lista o que é coberto, com os termos técnicos.
 - **processo:** abre com quem fala e o que destrincha ("Geoffrey Richman destrincha...", "Bastidores da..."). Resume os pontos concretos que aparecem.
+- **mindset:** abre com quem fala e a tese ("Pedro Loos destrincha...", "Stan Lee conta..."). Resume o argumento e o exemplo concreto que o sustenta, sem virar conselho pro leitor.
 
 ## O que a descrição não faz
 
@@ -46,6 +47,9 @@ tutoriais
 - "Explica profundidade de campo do zero e os três controles práticos: distância até o sujeito, distância focal e abertura (f-stop). Mostra como cada um abre ou fecha o foco e a lógica invertida da escala de f-stop."
 - "Danny Gan ensina a aplicar o visual teal & orange no estilo Ozark no DaVinci Resolve usando nós paralelos, sem qualifiers, sem máscaras, com proteção limpa dos tons de pele."
 
+mindset
+- "Pedro Loos destrincha o efeito Dunning-Kruger pela curva de confiança versus conhecimento, incluindo o fundo do poço onde mora a síndrome do impostor. Fecha com o paradoxo de Polanyi, a ideia de que sabemos mais do que conseguimos explicar, e o limite que isso impõe à IA."
+
 processo
 - "Geoffrey Richman destrincha decisões de montagem do finale de Severance: empilhar takes em tracks paralelos pra comparar selects, usar a banda marcial como trilha contínua, construir ritmo com cortes rápidos e parada seca, e deslocar o POV pra emoção ficar só no Mark."
 - "Ludwig dá aula pra criadores iniciantes sobre funil de conteúdo, com números reais de uma live de 6 horas que virou VODs, vídeo longo e shorts. Defende gravar menos, reservar horas do dia pra ideação e tratar cada transmissão como matéria-prima de outros formatos."
@@ -55,7 +59,8 @@ processo
 
 - **referencias:** peça pronta pra se inspirar. Comercial, clipe, curta, filme de marca.
 - **tutoriais:** ensina técnica ou ferramenta.
-- **processo:** bastidores, carreira, negócio, mindset, como o trabalho é feito.
+- **processo:** bastidores, carreira, negócio, como o trabalho é feito. Ligado ao ofício audiovisual.
+- **mindset:** reflexão sobre produtividade, criatividade, foco, fracasso, propósito. Serve pra qualquer criativo, não depende do ofício. Na dúvida entre os dois: se o vídeo fala de um trabalho ou mercado específico, é processo.
 
 ## Tags em uso
 
