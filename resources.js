@@ -488,4 +488,12 @@ const RESOURCES = [
     tags: ["videoclipe","cinematografia","direção"],
   },
 
+  {
+    cat: "referencias",
+    title: "VALORANT Champions Shanghai: Opening Day Film",
+    url: "https://www.youtube.com/watch?v=GoHmHA37Sbg",
+    description: "Filme de abertura da Riot para o VALORANT Champions Shanghai 2026. Parte da ideia de que a velha guarda caiu, passa pela ascensão da Nongshim RedForce e da Karmine Corp e pela pressão da China jogando em casa, e fecha com pro players falando de derrota, legado e última chance.",
+    tags: ["cinematografia","documentário","publicidade"],
+  },
+
 ];
