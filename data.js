@@ -51,6 +51,10 @@ const PINNED = [
 ];
 
 
+// Vídeo em destaque no topo ("Se for ver um só"): id do YouTube. Trocar aqui, sem mexer no HTML.
+const FEATURED = "1GEqDZ3hQSo";
+
+
 // Equipamento: vazio até existirem os links reais (Amazon Associados e Mercado Livre, por produto).
-// A lista antiga (dormente, com textos provisórios) está no histórico do git. index.html ainda referencia GEAR.
+// A lista antiga (dormente, com textos provisórios) está no histórico do git. O site hoje não usa GEAR.
 const GEAR = [];

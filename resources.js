@@ -17,6 +17,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=LLJ38OdS_q8",
     description: "Comercial da Lay's no estádio com Beckham e Thierry Henry quebrando a quarta parede pra falar com a câmera. Vale pela comédia improvisada, timing de reação e como a campanha integra naturalidade de celebridade e cena de torcida.",
     tags: ["publicidade", "direção"],
+    added: "2026-05-11",
+    dur: 107,
   },
   {
     cat: "referencias",
@@ -24,6 +26,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=w0PkvfJ-uBg",
     description: "Spec ad de 30s da Tenfold para a On, rodado em 1 dia com Sony Venice, FX3 e drone Freefly Ember nas Cooke S4. Referência de comercial esportivo: ritmo, movimento de câmera e textura de imagem.",
     tags: ["publicidade", "cinematografia"],
+    added: "2026-05-11",
+    dur: 31,
   },
   {
     cat: "referencias",
@@ -31,6 +35,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=6meAaX907to",
     description: "Videoclipe do rapper britânico ArrDee em parceria com The Shapeshifters. Produção visual densa e bem construída.",
     tags: ["videoclipe", "direção"],
+    added: "2026-05-11",
+    dur: 197,
   },
   {
     cat: "processo",
@@ -38,6 +44,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=T70A0yeBNLU",
     description: "Produção acelerada de conteúdo: como planejar e executar 4 reels para um cliente em um único dia de gravação.",
     tags: ["produção", "behind the scenes", "processo criativo"],
+    added: "2026-05-11",
+    dur: 463,
   },
   {
     cat: "referencias",
@@ -45,6 +53,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=xKha-MXPKTQ",
     description: "Fashion film cinematográfico com combinação de Sony Venice e lentes Leica R. Estética limpa e atmosfera forte.",
     tags: ["fashion film", "cinematografia"],
+    added: "2026-05-11",
+    dur: 95,
   },
   {
     cat: "referencias",
@@ -52,6 +62,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=rvpD9e-wPBk",
     description: "Filme de marca da Ferrari na F1, montagem rápida no ritmo da paixão dos pilotos. Vale pela direção cinematográfica, color em torno do vermelho e edição que costura depoimento e ação de pista.",
     tags: ["publicidade", "direção", "edição"],
+    added: "2026-05-11",
+    dur: 279,
   },
   {
     cat: "referencias",
@@ -59,6 +71,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=LEhTlLnOVDU",
     description: "Videoclipe oficial de Young Miko. Visual arrojado com referências de estética latina contemporânea.",
     tags: ["videoclipe", "direção"],
+    added: "2026-05-11",
+    dur: 162,
   },
   {
     cat: "referencias",
@@ -66,6 +80,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=oojBNXKtE9M",
     description: "Videoclipe oficial do NEMZZZ pra faixa PTSD, do mixtape Do Not Disturb. Vale assistir como referência de direção e estética de clipe de rap UK em formato curto, pouco mais de 2 minutos.",
     tags: ["videoclipe", "direção", "cinematografia"],
+    added: "2026-05-11",
+    dur: 136,
   },
   {
     cat: "referencias",
@@ -73,6 +89,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=MYHrk_6qky8",
     description: "Videoclipe de rap UK dirigido por donprod e dinperlis. Vale como referência de direção e iluminação em locação, com styling cuidado e visual coeso pra peça curta de 2:37.",
     tags: ["videoclipe", "direção", "iluminação"],
+    added: "2026-05-11",
+    dur: 157,
   },
   {
     cat: "referencias",
@@ -80,6 +98,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=i0KBwYzivmc",
     description: "Atleta de fitness da Red Bull conta em primeira pessoa como a pressão por ranking virou crise de saúde mental, a pausa de um ano e o reencontro com o esporte. Vale pela perspectiva sobre carreira e propósito.",
     tags: ["documentário", "cinematografia"],
+    added: "2026-05-11",
+    dur: 154,
   },
   {
     cat: "referencias",
@@ -87,6 +107,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=XVzxU5HNwtk",
     description: "Videoclipe oficial com estética visual marcante, na linha dos outros UK artists da coleção.",
     tags: ["videoclipe", "direção"],
+    added: "2026-05-11",
+    dur: 173,
   },
   {
     cat: "referencias",
@@ -94,6 +116,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=mJJY53qhJe0",
     description: "Curta de 5 min que conta um 3 contra 3 de rua como lenda urbana, narrada no carro a caminho do jogo. Vale pelo roteiro cômico, ritmo de diálogo e direção de elenco com Chalamet, Messi, Bellingham, Lamine Yamal e Trinity Rodman.",
     tags: ["publicidade", "direção", "cinematografia"],
+    added: "2026-06-03",
+    dur: 306,
   },
   {
     cat: "referencias",
@@ -101,6 +125,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=qRr0lmYvp5g",
     description: "Filme de marca da adidas sobre Sabastian Sawe quebrando as 2h na maratona de Londres 2026. Vale pela fotografia, ritmo de montagem e construção emocional de um doc esportivo de orçamento alto, dos bastidores íntimos ao clímax da prova.",
     tags: ["documentário", "cinematografia"],
+    added: "2026-06-03",
+    dur: 751,
   },
   {
     cat: "referencias",
@@ -108,6 +134,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=XwxA_oOzMDY",
     description: "Clipe da Ibeyi rodado em Cuba por Corry Van Rhijn e Roman Pichon Herrera, fotografia de Luis Armando Arteaga. Vale pela direção que mistura percussão e dança ao vivo com pipeline pesado de VFX e arte em IA. Referência de integração entre captação real e pós.",
     tags: ["videoclipe", "cinematografia"],
+    added: "2026-06-03",
+    dur: 202,
   },
   {
     cat: "referencias",
@@ -115,6 +143,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=x6_mbnsh6VU",
     description: "Videoclipe experimental dirigido por Romain Gavras com coreografia de Damien Jalet. Atmosfera distópica e movimento coletivo intenso.",
     tags: ["videoclipe", "cinematografia", "direção"],
+    added: "2026-06-03",
+    dur: 455,
   },
 
   {
@@ -123,6 +153,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=veav1xL-NAc",
     description: "Clipe oficial de rap UK com Travis Scott, menos de dois minutos. Serve como referência de videoclipe de performance, com corte colado no beat e a cena sustentada pela presença dos artistas em quadro.",
     tags: ["videoclipe","direção","edição"],
+    added: "2026-09-07",
+    dur: 117,
   },
 
   // ── Tutoriais ────────────────────────────────────────────────
@@ -132,6 +164,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=8Xxxd7me-oc",
     description: "Monta uma animação de mapa estilo VOX no After Effects com um rig de câmera 3D controlado por nulls (controllers de rotação X, Y, Z e posição via pick-whip parenting), além de profundidade de campo com abertura alta, renderer 3D clássico e motion blur.",
     tags: ["after effects", "motion design"],
+    added: "2026-05-11",
+    dur: 1008,
   },
   {
     cat: "tutoriais",
@@ -139,6 +173,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=34jkJoN8qOI",
     description: "Explica profundidade de campo do zero e os três controles práticos: distância até o sujeito, distância focal e abertura (f-stop). Mostra como cada um abre ou fecha o foco e a lógica invertida da escala de f-stop.",
     tags: ["cinematografia"],
+    added: "2026-05-11",
+    dur: 989,
   },
   {
     cat: "tutoriais",
@@ -146,6 +182,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=FTXMx8ij_Nw",
     description: "Explica o que define o alcance dinâmico do sensor: full well capacity e noise floor, por que os stops úteis variam entre RED e ARRI, como a curva gama (log vs padrão) limita a imagem final e por que ISO nativo importa fora do RAW.",
     tags: ["cinematografia"],
+    added: "2026-05-11",
+    dur: 878,
   },
   {
     cat: "tutoriais",
@@ -153,6 +191,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=99v96TL-tuY",
     description: "Explica espaço de cor do zero: o que é cor, metamerismo, como os cones LMS viram o CIE 1931 XYZ, e por que Rec.709, DCI-P3 e Rec.2020 são RGB absolutos que só mudam os pontos primários.",
     tags: ["color grading"],
+    added: "2026-05-11",
+    dur: 984,
   },
   {
     cat: "tutoriais",
@@ -160,6 +200,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=VbJtLQPj4go",
     description: "Introdução à teoria da cor pra pintura digital: os três atributos (valor, matiz, saturação), o círculo cromático como simplificação de um espaço 3D, cores complementares, mistura de pigmento vs navegação digital e o gamut mask do James Gurney.",
     tags: ["color grading"],
+    added: "2026-05-11",
+    dur: 5950,
   },
   {
     cat: "tutoriais",
@@ -167,6 +209,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=gnUYoQ1pwes",
     description: "Explica a ciência da cor do zero: resposta dos cones, espaços LMS e CIE 1931, diagrama de cromaticidade, gamut, cubo RGB, conversão pra HSV e hex, e como telas RGB e impressoras CMYK formam cada cor.",
     tags: ["color grading"],
+    added: "2026-05-11",
+    dur: 2554,
   },
   {
     cat: "tutoriais",
@@ -174,6 +218,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=d2RRrqNzmWg",
     description: "Como cortar áudio de entrevista nas consoantes surdas (p, t, k, s, f), que não têm pitch e soam sempre iguais, pra emendas invisíveis. Inclui o truque de defasar o corte de vídeo do corte de áudio pra esconder a junção. Serve em qualquer editor.",
     tags: ["davinci resolve", "áudio", "edição"],
+    added: "2026-05-11",
+    dur: 378,
   },
   {
     cat: "processo",
@@ -181,6 +227,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=eGkfByNEcw0",
     description: "Geoffrey Richman destrincha decisões de montagem do finale de Severance: empilhar takes em tracks paralelos pra comparar selects, usar a banda marcial como trilha contínua, construir ritmo com cortes rápidos e parada seca, e deslocar o POV pra emoção ficar só no Mark.",
     tags: ["análise", "edição", "behind the scenes"],
+    added: "2026-05-11",
+    dur: 1000,
   },
   {
     cat: "tutoriais",
@@ -188,6 +236,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=DI1BjkmVhTg",
     description: "Gerald Undone testa o que sobrevive à compressão do YouTube: super-sharpen leve no export, H.264 em vez de H.265/AV1, MP4, bitrate variável até 45 Mbps em 4K, sem quantizer (Constant QP), e evitar gradientes escuros e cenas dark.",
     tags: ["produção", "edição"],
+    added: "2026-05-11",
+    dur: 691,
   },
   {
     cat: "tutoriais",
@@ -195,6 +245,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=_wpinhILzgg",
     description: "Walkthrough do Balance DCTL (Utility DCTL pack do Mononodes) no DaVinci Resolve: indicador de tom de pele que marca desvios em magenta/verde, slider de ângulo de matiz, mapas de calor de exposição e saturação, e o botão gray out non-skin para focar na pele.",
     tags: ["davinci resolve", "color grading"],
+    added: "2026-05-11",
+    dur: 851,
   },
   {
     cat: "processo",
@@ -202,6 +254,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=5CgR3UH1txU",
     description: "Aron Forbes destrincha o mix da vocal ao vivo da Billie Eilish e mostra cada plugin Waves no trabalho: Clarity Vx pra matar o vazamento da bateria no microfone, C4 multibanda pra encaixar os backing vocals atrás dela, S1 pra alargar as harmonias e F6 e Curves Equator na limpeza por EQ subtrativa.",
     tags: ["áudio", "behind the scenes"],
+    added: "2026-05-11",
+    dur: 782,
   },
   {
     cat: "tutoriais",
@@ -209,6 +263,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=_R2cUv61s7I",
     description: "Workflow no Lightroom pra recuperar fotos de show com dominantes extremas de azul, magenta e vermelho sem cair no preto e branco. Usa White Balance, painel Calibration (Hue por canal primário), Color Grading e Color Mixer pra trazer skin tones e cores naturais de volta.",
     tags: ["color grading", "iluminação"],
+    added: "2026-05-11",
+    dur: 792,
   },
   {
     cat: "tutoriais",
@@ -216,6 +272,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=7KYwi2F5Ce4",
     description: "Do disco de Newton ao espaço okLab: como os modelos matemáticos de cor (XYZ, Lab, elipses de MacAdam) tentam representar a forma como o olho percebe matiz, saturação e brilho.",
     tags: ["color grading"],
+    added: "2026-05-11",
+    dur: 1175,
   },
   {
     cat: "tutoriais",
@@ -223,6 +281,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=Lca_XEoO4b8",
     description: "Como os montadores de The Bear usam planos de reação, tomadas longas sem corte e a trilha sonora para construir tensão e o arco emocional dos personagens sem depender de diálogo.",
     tags: ["análise", "edição", "direção"],
+    added: "2026-05-11",
+    dur: 1067,
   },
   {
     cat: "tutoriais",
@@ -230,6 +290,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=gZXIfcm2KR8",
     description: "Como montar um grade publicitário no Resolve: CST sem LUT de saída, contraste e exposição para separar tons, seleções de pele e fundo, LUT sutil da Lens Distortions e glow em soft light no acabamento.",
     tags: ["davinci resolve", "color grading", "publicidade"],
+    added: "2026-05-11",
+    dur: 417,
   },
   {
     cat: "tutoriais",
@@ -237,6 +299,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=bwz-jLZz2w8",
     description: "James Jani detalha o próprio processo de edição de documentários: storyboard com a trilha definida antes do corte, motivos visuais recorrentes (contagem regressiva, quebra-cabeça) para manter a tensão e briefing próprio para a equipe de motion graphics.",
     tags: ["edição", "documentário", "processo criativo"],
+    added: "2026-05-11",
+    dur: 1223,
   },
   {
     cat: "processo",
@@ -244,6 +308,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=x3s0kMgSiMY",
     description: "Conversa aprofundada sobre como a direção de fotografia se adapta a diferentes formatos audiovisuais com Victor Alencar.",
     tags: ["cinematografia", "direção", "entrevista"],
+    added: "2026-05-11",
+    dur: 12599,
   },
   {
     cat: "tutoriais",
@@ -251,6 +317,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=U4egvCgW7qc",
     description: "Como calcular e aplicar proporções de iluminação entre key e fill em stops, do 128:1 ao 2:1, usando luxímetro para manter consistência entre planos e cenas.",
     tags: ["iluminação", "cinematografia"],
+    added: "2026-05-11",
+    dur: 705,
   },
   {
     cat: "processo",
@@ -258,6 +326,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=NJBznivKoTg",
     description: "Como filmar, precificar e entregar vídeo corporativo trabalhando sozinho, do orçamento à entrega.",
     tags: ["carreira", "produção", "negócios"],
+    added: "2026-05-11",
+    dur: 1352,
   },
   {
     cat: "processo",
@@ -265,6 +335,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=n0Afhmb1-ag",
     description: "Relato detalhado de como um filmmaker independente faturou mais de $200k: fontes de renda, estratégias e mentalidade.",
     tags: ["carreira", "negócios"],
+    added: "2026-05-11",
+    dur: 898,
   },
   {
     cat: "processo",
@@ -272,6 +344,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=0hrsMdpWsBw",
     description: "O cinematógrafo Oliver Millar detalha os bastidores de um comercial de alto orçamento para a On Running com Zendaya. Iluminação com SkyPanel, Sony Venice, filosofia de set e carreira.",
     tags: ["análise", "cinematografia", "publicidade", "iluminação"],
+    added: "2026-05-11",
+    dur: 4725,
   },
   {
     cat: "processo",
@@ -279,6 +353,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=7S_geBV5bLQ",
     description: "Adam Savage explora os bastidores da IMAX para mostrar o processo monumental de montar e projetar filmes em 70mm, dos rolos de centenas de quilos à cabine de projeção.",
     tags: ["cinematografia", "behind the scenes"],
+    added: "2026-05-11",
+    dur: 1041,
   },
   {
     cat: "processo",
@@ -286,6 +362,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=SYkAWTmpTBc",
     description: "Adam Savage visita a IMAX para entender como filmes 70mm são digitalizados e reimpresos em película, mostrando como analógico e digital coexistem no cinema de alta fidelidade.",
     tags: ["cinematografia", "behind the scenes"],
+    added: "2026-05-11",
+    dur: 1268,
   },
   {
     cat: "tutoriais",
@@ -293,6 +371,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=SnqE7UtEErU",
     description: "Danny Gan ensina a aplicar o visual teal & orange no estilo Ozark no DaVinci Resolve usando nós paralelos, sem qualifiers, sem máscaras, com proteção limpa dos tons de pele.",
     tags: ["davinci resolve", "color grading"],
+    added: "2026-05-11",
+    dur: 366,
   },
   {
     cat: "tutoriais",
@@ -300,6 +380,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=ptyewwtjBpo",
     description: "Teste prático mostrando como montar luz motivada num ambiente: chave difundida por fora da janela, luz de mesa e contraluz testados um a um, provando que iluminar o espaço em vez do rosto entrega resultado mais natural e cinematográfico.",
     tags: ["iluminação", "cinematografia"],
+    added: "2026-05-11",
+    dur: 919,
   },
   {
     cat: "processo",
@@ -307,6 +389,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=FZCVYCS8x5M",
     description: "O produtor Jack Antonoff destrincha a produção de 'Manchild' na Mix with the Masters. Equipamentos vintage como instrumentos, ecos de fita, e a filosofia de deixar espaço na mixagem.",
     tags: ["áudio", "produção", "behind the scenes"],
+    added: "2026-06-03",
+    dur: 675,
   },
   {
     cat: "processo",
@@ -314,6 +398,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=1GEqDZ3hQSo",
     description: "Bastidores do filme de Christopher Nolan rodado inteiro em película IMAX. Invólucro à prova de som de 136kg para a câmera, montagem manual do negativo no FotoKem e correção de cor fotoquímica, sem digital.",
     tags: ["cinematografia", "análise", "behind the scenes"],
+    added: "2026-06-03",
+    dur: 518,
   },
   {
     cat: "processo",
@@ -321,6 +407,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=MuXObj2ze9Y",
     description: "Cineasta freelancer abre os números reais do ano: direção e fotografia juntas somaram 65% do faturamento, com 27.871 libras só dirigindo e 22.641 editando, e a diferença entre dias com cachê fechado e dias efetivamente trabalhados.",
     tags: ["carreira", "negócios"],
+    added: "2026-06-03",
+    dur: 731,
   },
 
   // ── Processo Criativo ────────────────────────────────────────
@@ -330,6 +418,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=j72UPe2qnV4",
     description: "Eduardo Marinho conta por que abandonou a competição depois de ver a tristeza dos derrotados nas disputas do Exército, e como a reflexão sobre pacientes terminais o convenceu de que o que importa são os afetos, não o patrimônio.",
     tags: ["mindset", "processo criativo", "carreira"],
+    added: "2026-05-11",
+    dur: 363,
   },
   {
     cat: "processo",
@@ -337,6 +427,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=uGRfuxmK6ls",
     description: "Bastidores do clipe 'Murda' de Lil Yachty, rodado em película Ultra 16 com stock 500T. Cole Bennett mostra por que deixa espaço pro imprevisto no set e prefere efeito prático, como a plataforma real pro soco no sino, a CGI puro.",
     tags: ["behind the scenes", "videoclipe", "produção", "processo criativo"],
+    added: "2026-05-11",
+    dur: 729,
   },
   {
     cat: "mindset",
@@ -344,6 +436,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=I7arqW5luKc",
     description: "Documentário de 71 minutos sobre a trajetória de Eduardo Marinho: da fuga da vida militar e do abandono da competição até a criação do conceito 'observar e absorver' que virou a obra dele.",
     tags: ["documentário", "mindset", "processo criativo"],
+    added: "2026-05-11",
+    dur: 4261,
   },
   {
     cat: "mindset",
@@ -351,6 +445,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=vYaNiC4kchg",
     description: "Como reconquistar foco e atenção em um mundo cheio de distrações. Estratégias práticas e honestas.",
     tags: ["mindset", "processo criativo"],
+    added: "2026-05-11",
+    dur: 1193,
   },
   {
     cat: "mindset",
@@ -358,6 +454,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=RH7VZVKTzac",
     description: "Reflexão sobre a importância de terminar o que se começa, e por que a maioria dos projetos criativos morre no meio.",
     tags: ["mindset", "processo criativo"],
+    added: "2026-05-11",
+    dur: 168,
   },
   {
     cat: "mindset",
@@ -365,6 +463,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=Pdp3p23P-TI",
     description: "Casey Neistat propõe uma reflexão sobre produtividade através de uma 'Matriz de Prioridades' dividida em quatro quadrantes, e por que fazer muito não significa realizar de verdade.",
     tags: ["mindset", "processo criativo", "carreira"],
+    added: "2026-05-11",
+    dur: 580,
   },
   {
     cat: "processo",
@@ -372,6 +472,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=jlXE2yOEBmQ",
     description: "Bastidores de cobrir um show de 50 mil pessoas com equipe enxuta e uma Sony FX3. Lentes, drone FPV, isolamento de áudio no Moises e preto e branco como recurso criativo.",
     tags: ["behind the scenes", "produção", "cinematografia"],
+    added: "2026-06-03",
+    dur: 1358,
   },
   {
     cat: "processo",
@@ -379,6 +481,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=Xoi7reIF2r8",
     description: "Making-of do projeto STORM com Yung Lean, dirigido por Romain Gavras. A dinâmica do set, a narrativa por trás do clipe e a produção da coreografia de Damien Jalet.",
     tags: ["behind the scenes", "videoclipe"],
+    added: "2026-06-03",
+    dur: 192,
   },
   {
     cat: "processo",
@@ -386,6 +490,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=Tm9GjI02CNo",
     description: "A trajetória de Ed Hardy transformando a tatuagem em arte fina. Customização, arquivo meticuloso, transmissão de conhecimento e a crença de que criar é a parte mais importante.",
     tags: ["documentário", "arte", "processo criativo"],
+    added: "2026-06-03",
+    dur: 2645,
   },
   {
     cat: "processo",
@@ -393,6 +499,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=xWb-ZSx1IDw",
     description: "Amy Lee detalha a visão por trás do clipe dirigido por Jensen Noen. Conceito sobre redes sociais, atuar em velocidade dobrada para câmera lenta e 12 ratos treinados em cena.",
     tags: ["behind the scenes", "videoclipe", "direção"],
+    added: "2026-06-03",
+    dur: 575,
   },
 
   {
@@ -401,6 +509,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=Oi-ItRJxFjw",
     description: "Cenógrafo, lighting designer e riggers contam como o limite de carga do teto virou um rig de 80 moving lights em winches cinéticos. Mostram também a rotina de programar 50 performances no grandMA3, dividindo o rig entre operadores e limpando luz plano a plano.",
     tags: ["behind the scenes","iluminação","produção","processo criativo"],
+    added: "2026-09-07",
+    dur: 2366,
   },
   {
     cat: "processo",
@@ -408,6 +518,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=KDjATf-Ws5k",
     description: "Como a limitação de peso sobre o gramado matou o cenário em carros e virou 386 pessoas fantasiadas de cana e bananeira. Mostra também o ensaio offsite com os operadores de câmera reais e a montagem do palco inteiro em 8 minutos.",
     tags: ["behind the scenes","produção","direção","processo criativo"],
+    added: "2026-09-07",
+    dur: 1433,
   },
   {
     cat: "mindset",
@@ -415,6 +527,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=Js4NiTFq9Pw",
     description: "David Epstein defende que amplitude ganha da especialização precoce em áreas instáveis, onde regra e feedback mudam. Usa Gunpei Yokoi, que criou o Game Boy juntando tecnologias baratas e já ultrapassadas, e fecha com a ideia de comparar o próprio trabalho com o de ontem.",
     tags: ["mindset","carreira","processo criativo","entrevista"],
+    added: "2026-09-07",
+    dur: 339,
   },
   {
     cat: "processo",
@@ -422,6 +536,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=emq2nevl898",
     description: "Fred Zeller, mixer de produção do Tonight Show e dos 15 anos de Conan, abre a sala de controle: 24 mics sem fio, lavs na plateia pra pegar a risada isolada, DADpad pros efeitos e por que ele prefere andar no fader do Jimmy a comprimir tudo.",
     tags: ["áudio","behind the scenes","produção","entrevista"],
+    added: "2026-09-07",
+    dur: 864,
   },
   {
     cat: "mindset",
@@ -429,6 +545,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=5aR-5cNABAI",
     description: "Stan Lee conta que o editor rejeitou o Homem-Aranha por ser aranha, adolescente e cheio de problemas pessoais. Ele enfiou o personagem na última edição de uma revista que já ia morrer. O argumento dele: quem acredita na própria ideia não deve deixar ninguém convencê-lo a largar.",
     tags: ["mindset","processo criativo","carreira"],
+    added: "2026-09-07",
+    dur: 352,
   },
   {
     cat: "mindset",
@@ -436,6 +554,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=Yrug2Fd9CWY",
     description: "Ensaio sobre a ideia dos 2% do livro The Comfort Crisis: só 2% das pessoas pegam a escada quando tem elevador do lado. O argumento central é consistência acima de intensidade, porque hábito pequeno vira identidade e meta grande vira prazo furado em fevereiro.",
     tags: ["mindset","processo criativo"],
+    added: "2026-09-07",
+    dur: 820,
   },
   {
     cat: "mindset",
@@ -443,6 +563,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=dh64bHIhbiU",
     description: "Gabriel Saab argumenta que procrastinar é fuga emocional, não preguiça, e que trabalho criativo tem centenas de microdecisões que disparam esse escape. Propõe reduzir a fricção da tarefa, aumentar a dos gatilhos e trocar comportamento por identidade.",
     tags: ["mindset","processo criativo","carreira"],
+    added: "2026-09-07",
+    dur: 1075,
   },
   {
     cat: "mindset",
@@ -450,6 +572,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=13yIfxczLpc",
     description: "Ela mede 4h30 de tela por dia e percebe listas infinitas de ideias salvas que nunca viraram nada, então força a mão: pinta, testa gouache, recria um plano que viu no Instagram. A tese: quem nunca se permite ser iniciante nunca deixa de ser um.",
     tags: ["mindset","processo criativo"],
+    added: "2026-09-07",
+    dur: 595,
   },
   {
     cat: "mindset",
@@ -457,6 +581,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=0TjhggXdj-A",
     description: "Pedro Loos destrincha o efeito Dunning-Kruger pela curva de confiança versus conhecimento, incluindo o fundo do poço onde mora a síndrome do impostor. Fecha com o paradoxo de Polanyi, a ideia de que sabemos mais do que conseguimos explicar, e o limite que isso impõe à IA.",
     tags: ["mindset","carreira","processo criativo"],
+    added: "2026-09-07",
+    dur: 875,
   },
   {
     cat: "processo",
@@ -464,6 +590,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=k4sOrwMcOXc",
     description: "Ludwig dá aula pra criadores iniciantes sobre funil de conteúdo, com números reais de uma live de 6 horas que virou VODs, vídeo longo e shorts. Defende gravar menos, reservar horas do dia pra ideação e tratar cada transmissão como matéria-prima de outros formatos.",
     tags: ["carreira","negócios","mindset","processo criativo"],
+    added: "2026-09-07",
+    dur: 3769,
   },
   {
     cat: "processo",
@@ -471,6 +599,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=u_o8kpY7EEs",
     description: "Três dias dentro da fábrica da Kodak, do pellet de poliéster ao corte e perfuração no escuro, tudo gravado em 35mm e 16mm. Termina com entrevistas sobre sucessão de conhecimento, o estoque finito de câmeras usadas e por que o filme voltou a crescer.",
     tags: ["documentário","behind the scenes","cinematografia","produção"],
+    added: "2026-09-07",
+    dur: 3245,
   },
   {
     cat: "processo",
@@ -478,6 +608,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=tN05nzk9oT8",
     description: "Bastidores da montagem da cópia 70mm da Odisseia rolo a rolo, o tech check às 5 da manhã e a paranoia de não riscar o filme, já que risco em película é permanente. Fecha com a real: não existe escola nem trilha de formação pra virar projecionista hoje.",
     tags: ["behind the scenes","carreira","produção"],
+    added: "2026-09-07",
+    dur: 1473,
   },
 
   {
@@ -486,6 +618,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=D3CzQPnTfzI",
     description: "Clipe de faroeste moderno de Shaboozey com Gunna, rodado numa cidade cenográfica de western. Alterna saloon e rua de terra sob sol forte, figurino country urbano e montagem que troca cor e preto e branco no ritmo da faixa. Referência de narrativa de gênero em videoclipe.",
     tags: ["videoclipe","cinematografia","direção"],
+    added: "2026-09-24",
+    dur: 171,
   },
 
   {
@@ -494,6 +628,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=GoHmHA37Sbg",
     description: "Filme de abertura da Riot para o VALORANT Champions Shanghai 2026. Parte da ideia de que a velha guarda caiu, passa pela ascensão da Nongshim RedForce e da Karmine Corp e pela pressão da China jogando em casa, e fecha com pro players falando de derrota, legado e última chance.",
     tags: ["cinematografia","documentário","publicidade"],
+    added: "2026-09-24",
+    dur: 482,
   },
 
   {
@@ -502,6 +638,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=iXMmlpL4xQE",
     description: "Clipe de Small Talk, do rapper e produtor Ovrkast. com participação de Samara Cyn, dirigido por Mitch Ritter. Referência de fotografia em videoclipe de rap.",
     tags: ["videoclipe","cinematografia","direção"],
+    added: "2026-09-24",
+    dur: 180,
   },
 
   {
@@ -510,6 +648,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=QzeOiygitwM",
     description: "Curta de lançamento do álbum de Sant, com roteiro e narrativa próprios e fotografia documental analógica revelada pelo Santo Lab. Referência de direção, fotografia e montagem pra filme de álbum.",
     tags: ["cinematografia","direção","color grading"],
+    added: "2026-09-24",
+    dur: 835,
   },
 
   {
@@ -518,6 +658,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=aXQoKVBPrOY",
     description: "Curta sobre Ana e Théo, ex-casal que se reencontra depois de seis anos sem se falar, quase todo passado dentro de um carro durante uma carona. A conversa vai do casual ao término, às relações atuais e ao que poderia ter sido, e fecha com \"Última Vez\", de Tim Bernardes.",
     tags: ["direção","cinematografia"],
+    added: "2026-09-24",
+    dur: 1173,
   },
 
   {
@@ -526,6 +668,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=8nyQWmflve4",
     description: "Gav, do The Slow Mo Guys, filma obturadores a até 1,75 milhão de quadros por segundo. Cobre cortina mecânica e eletrônica, rolling shutter, sincronia de flash e High-Speed Sync, leaf shutter na Hasselblad X2D, readout do sensor e global shutter na Phantom TMX 7510.",
     tags: ["cinematografia","iluminação"],
+    added: "2026-09-24",
+    dur: 1128,
   },
 
   {
@@ -534,6 +678,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=P5jacLh0SxQ",
     description: "Skeen recusa um emprego corporativo e documenta 365 dias tentando virar DJ em tempo integral: primeiro show vazio e com falhas técnicas, viagem a Amsterdã e Ibiza, festa cancelada em Chicago, fase de depressão, remixes que chamaram atenção e turnê abrindo para Jigitz.",
     tags: ["carreira","mindset","documentário"],
+    added: "2026-09-24",
+    dur: 1003,
   },
 
   {
@@ -542,6 +688,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=eMTDAHK-tkE",
     description: "Pursuit of Wonder percorre a vida de Charles Bukowski, da infância com abuso e isolamento aos anos de trabalho braçal e rejeição até o sucesso depois dos 50. Lê o \"Don't Try\" da lápide como recusa ao esforço forçado por reconhecimento ou dinheiro e insistência em ir até o fim na vocação.",
     tags: ["mindset","processo criativo","análise"],
+    added: "2026-09-24",
+    dur: 469,
   },
 
   {
@@ -550,6 +698,8 @@ const RESOURCES = [
     url: "https://www.youtube.com/watch?v=9fvETktnaRw",
     description: "Bernard Albertson, que já morou no banco de trás de um carro e aprendeu a ler e escrever sozinho, fala aos jovens em pouco mais de cinco minutos. Passa por não desistir, aprender sempre, assumir o próprio destino e a demanda futura por ofícios manuais como encanador e eletricista.",
     tags: ["mindset","carreira"],
+    added: "2026-09-24",
+    dur: 353,
   },
 
 ];

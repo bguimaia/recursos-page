@@ -14,6 +14,7 @@ O commit e o push do resources.js ficam com a sessão, depois do ok do Bruno.
 Chave da API em ~/.recursos-inbox-key (fora de qualquer repo). Regras de escrita: ../docs/voz-descricoes.md
 """
 import contextlib, json, os, re, sys, time, urllib.parse, urllib.request
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 API = "https://recursos-inbox.b-gui-maia.workers.dev/api/items"
@@ -27,6 +28,7 @@ MAX_CHARS = 12000   # orçamento de transcript por vídeo (~3 mil tokens), amost
 MIN_CONTEXT = 400   # a partir daqui o resumo colado pelo Bruno substitui o transcript
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 YT_HOST = re.compile(r"(^|\.)youtube\.com$|^youtu\.be$")
+SP = timezone(timedelta(hours=-3))  # Brasil sem horário de verão desde 2019
 
 
 def call(url, method="GET", body=None):
@@ -76,6 +78,22 @@ def yt_description(url):
         return ""
 
 
+def iso_seconds(s):
+    m = re.search(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", s or "")
+    return (int(m[1] or 0) * 3600 + int(m[2] or 0) * 60 + int(m[3] or 0)) if m and any(m.groups()) else None
+
+
+def yt_length(url):
+    """Duração em segundos direto da página do vídeo (quando não há legenda com Runtime)."""
+    try:
+        req = urllib.request.Request(url, headers={"user-agent": UA, "accept-language": "en"})
+        html = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "replace")
+        m = re.search(r'"lengthSeconds":"(\d+)"', html)
+        return int(m.group(1)) if m else None
+    except Exception:
+        return None
+
+
 def sample(text):
     """Vídeo longo: começo + meio + fim em vez de só o começo, pra descrição cobrir o vídeo inteiro."""
     if len(text) <= MAX_CHARS:
@@ -113,7 +131,7 @@ def pull():
         vid = youtube_id(it["url"])
         if len(base["context"]) >= MIN_CONTEXT:
             # o Bruno colou resumo/transcript do vídeo inteiro: é a fonte. Nem bate no YouTube.
-            out.append(base | {"basis": "resumo", "content": oembed(it["url"]) if vid else ""})
+            out.append(base | {"basis": "resumo", "content": oembed(it["url"]) if vid else "", "dur": yt_length(it["url"]) if vid else None})
             continue
         if it.get("origin") == "site" and not vid:
             # link de visitante que não é vídeo do YouTube: não busca a página antes da triagem
@@ -124,9 +142,12 @@ def pull():
         except Exception as e:  # IP-block, página fora do ar
             content = "" if vid else f"[conversão falhou: {str(e)[:200]}]"
         basis = "legenda" if "### Transcript" in content else ("pagina" if content else "creditos")
+        dur = iso_seconds((re.search(r"\*\*Runtime:\*\*\s*(PT\S+)", content) or [None, ""])[1]) if vid else None
         if vid and not content:
             content = oembed(it["url"]) + "\n" + yt_description(it["url"])
-        out.append(base | {"basis": basis, "content": sample(content)})
+        if vid and not dur:
+            dur = yt_length(it["url"])
+        out.append(base | {"basis": basis, "content": sample(content), "dur": dur})
     HERE.mkdir(exist_ok=True)
     (HERE / "pending.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     sug = sum(1 for o in out if o["status"] == "sugerido")
@@ -174,6 +195,10 @@ def lint():
     for title, errs in problems:
         print(f"- {title[:70]}: {'; '.join(errs)}")
     total = src.count("url:")
+    for key, pat in (("added", r'added:\s*"\d{4}-\d{2}-\d{2}"'), ("dur", r"dur:\s*\d+")):
+        if len(re.findall(pat, src)) != total:
+            problems.append(("", ["?"]))
+            print(f"! {key}: {len(re.findall(pat, src))} de {total} entradas (toda entrada precisa de {key})")
     if len(items) != total:
         problems.append(("", ["?"]))
         print(f"! li {len(items)} de {total} entradas: alguma saiu do formato esperado")
@@ -188,6 +213,10 @@ def entry(it, nl):
              f"    tags: {json.dumps(it['tags'], ensure_ascii=False, separators=(',', ':'))},"]
     if it.get("by"):
         lines.append(f"    by: {s(it['by'])},")
+    if it.get("added"):
+        lines.append(f"    added: {s(it['added'])},")
+    if it.get("dur"):
+        lines.append(f"    dur: {int(it['dur'])},")
     return nl.join(lines + ["  },", "", ""])
 
 
@@ -214,8 +243,10 @@ def publish():
         if not youtube_id(pending[d["id"]]["url"]):
             sys.exit(f"NADA PUBLICADO. Não é vídeo do YouTube (a biblioteca ainda não tem seção pra isso): {pending[d['id']]['url']}")
     # URL sempre no formato canônico: youtu.be, shorts e ?si= viram watch?v=<id>
+    today = datetime.now(SP).date().isoformat()  # "Recém-adicionados" e o selo "novo" leem este campo
     items = [pending[d["id"]] | d | {"url": "https://www.youtube.com/watch?v=" + youtube_id(pending[d["id"]]["url"]),
-                                     "by": d.get("by", pending[d["id"]].get("by", ""))} for d in drafts]
+                                     "by": d.get("by", pending[d["id"]].get("by", "")),
+                                     "added": today, "dur": pending[d["id"]].get("dur")} for d in drafts]
     new = [it for it in items if not published(src, it["url"])]
     SITE_JS.write_text(insert(src, new), encoding="utf-8", newline="")
     for it in items:  # já estava no site também vira publicado (idempotente)
@@ -255,6 +286,10 @@ def demo():
                         "description": "Ação.", "tags": ["a", "b"], "by": "@fulano"}])
     assert '    tags: ["a","b"],\r\n    by: "@fulano",\r\n  },\r\n\r\n];' in out and "\n\n" not in out.replace("\r\n", ""), out
     assert json.loads(re.search(r"title: (.*),", out).group(1)) == 'Aspas "duplas" e \\ barra'
+    out2 = insert(src, [{"cat": "tutoriais", "title": "T", "url": "https://youtu.be/dQw4w9WgXcQ", "description": "D.",
+                         "tags": ["a"], "added": "2026-09-24", "dur": 212}])
+    assert '    added: "2026-09-24",\r\n    dur: 212,\r\n  },' in out2, out2
+    assert iso_seconds("PT1H2M3S") == 3723 and iso_seconds("PT45S") == 45 and iso_seconds("") is None
     back = list(entries(out))
     assert len(back) == 1 and back[0]["title"] == 'Aspas "duplas" e \\ barra' and back[0]["by"] == "@fulano", back
     print("ok")

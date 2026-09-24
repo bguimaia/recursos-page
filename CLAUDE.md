@@ -4,11 +4,11 @@ Site MAIA Resources (resources.bgmaia.com): estático, sem build, servido pelo *
 
 Repo público e o Netlify serve tudo que está nele: o `_redirects` devolve 404 pra `/_inbox/*`, `/docs/*` e os `.md` internos. Nada de nota pessoal, nome de visitante ou segredo em arquivo versionado. Commit sempre por nome de arquivo, nunca `git add -A`. Pesquisa de afiliados fica fora do repo: `Cowork OS/MAIA Prod/MAIA Prod Resources/afiliados-resources.md`.
 
-## Estado (24/09/2026)
+## Estado
 
-- `index.html` é o site antigo, ainda no ar. `DESIGN.md` descreve ele e está desatualizado.
-- O redesign aprovado está em `prototipo/index.html` (prévia noindex). Ele lê `prototipo/meta.js` (data de entrada e duração por vídeo, gerado por `prototipo/gen-meta.js`). Próximo passo: portar pro `index.html` com data e duração gravadas no próprio item, head novo (og, twitter, canonical), GA4 e acabamento visual. Lista completa na última auditoria.
-- Categorias (`referencias`, `tutoriais`, `processo`, `mindset`) aparecem em `_inbox/worker.js`, `_inbox/agent.py`, `_inbox/page.js` e nos CATS de `index.html` e `prototipo/index.html`. Mudou uma, muda em todos.
+- Em avaliação: o redesign (terracota, Archivo, sem cor por categoria; sistema no `DESIGN.md`) está em `new/index.html` (resources.bgmaia.com/new/, noindex) e a raiz `index.html` ainda é o site antigo, pra comparar. Os dois leem os mesmos `data.js` e `resources.js`. Pra promover: `new/index.html` vira o `index.html` da raiz (os caminhos já são absolutos), tirar o `noindex`, `/prototipo/*` passa a apontar pra `/` no `_redirects`, apagar `og-image.png` e a pasta `new/`. Dados de cada vídeo no próprio item: `added` (data de entrada) e `dur` (segundos), gravados pelo `agent.py publish`. Destaque do topo: `FEATURED` no `data.js`. GA4 (no redesign): view_resource, seen, filter_category, filter_tag, search, click_recommend, share, suggest_submit e suggest_error; vídeo sempre com resource_id, resource_title e resource_cat. Suas visitas não contam com `?ga=off` uma vez por navegador (`?ga=on` desfaz).
+- Categorias (`referencias`, `tutoriais`, `processo`, `mindset`) aparecem em `_inbox/worker.js`, `_inbox/agent.py`, `_inbox/page.js` e nos CATS do `index.html` (e do `new/index.html` enquanto ele existir). Mudou uma, muda em todos.
+- Próximos passos em aberto: Vimeo/Instagram/TikTok na biblioteca, seção de ferramentas e canais, caminhos de estudo (docs/ideias.md), equipamento com links Amazon/Mercado Livre.
 
 ## "revisa o inbox"
 

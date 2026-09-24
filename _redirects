@@ -2,8 +2,10 @@
 # (O domínio é servido pelo Netlify; tudo que está no repo viraria URL sem estas regras.)
 /_inbox/*        /404  404!
 /docs/*          /404  404!
-/prototipo/gen-meta.js  /404  404!
 /CLAUDE.md       /404  404!
 /PRODUCT.md      /404  404!
 /DESIGN.md       /404  404!
 /.gitignore      /404  404!
+
+# A prévia do redesign agora é o port em /new/ (em avaliação). Quando ele virar a página principal, trocar o destino pra /.
+/prototipo/*     /new/  301
