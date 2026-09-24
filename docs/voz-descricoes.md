@@ -1,6 +1,6 @@
-# Como escrever uma entrada do site Recursos
+# Como escrever uma entrada do MAIA Resources
 
-Fonte única. Vale pro agente semanal do Inbox e pra qualquer sessão manual. Tirado das 66 entradas publicadas até set/2026.
+Fonte única. Vale pra rotina "revisa o inbox" (CLAUDE.md) e pra qualquer sessão manual. `python _inbox/agent.py lint` confere as regras que dá pra checar por máquina. Tirado das 66 entradas publicadas até set/2026.
 
 ## Formato
 
