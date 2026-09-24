@@ -528,4 +528,12 @@ const RESOURCES = [
     tags: ["cinematografia","iluminação"],
   },
 
+  {
+    cat: "processo",
+    title: "I Gave Myself 365 Days to Become a Full-Time DJ",
+    url: "https://www.youtube.com/watch?v=P5jacLh0SxQ",
+    description: "Skeen recusa um emprego corporativo e documenta 365 dias tentando virar DJ em tempo integral: primeiro show vazio e com falhas técnicas, viagem a Amsterdã e Ibiza, festa cancelada em Chicago, fase de depressão, remixes que chamaram atenção e turnê abrindo para Jigitz.",
+    tags: ["carreira","mindset","documentário"],
+  },
+
 ];
