@@ -113,7 +113,7 @@ const RESOURCES = [
     cat: "referencias",
     title: "GENER8ION - STORM starring Yung Lean",
     url: "https://www.youtube.com/watch?v=x6_mbnsh6VU",
-    description: "Videoclipe experimental dirigido por Romain Gavras com coreografia de Damien Jalet. Atmosfera distópica, coreografia coletiva intensa, cinematografia impecável.",
+    description: "Videoclipe experimental dirigido por Romain Gavras com coreografia de Damien Jalet. Atmosfera distópica e movimento coletivo intenso.",
     tags: ["videoclipe", "cinematografia", "direção"],
   },
 
@@ -151,7 +151,7 @@ const RESOURCES = [
     cat: "tutoriais",
     title: "Color Spaces: Explained from the Ground Up",
     url: "https://www.youtube.com/watch?v=99v96TL-tuY",
-    description: "Explica espaço de cor do zero: o que é cor, metamerismo, como os cones LMS viram o CIE 1931 XYZ, e por que Rec.709, DCI-P3 e Rec.2020 são RGB absolutos que só mudam os pontos primários. Bom pra entender o que rola por baixo do color grading.",
+    description: "Explica espaço de cor do zero: o que é cor, metamerismo, como os cones LMS viram o CIE 1931 XYZ, e por que Rec.709, DCI-P3 e Rec.2020 são RGB absolutos que só mudam os pontos primários.",
     tags: ["color grading"],
   },
   {
@@ -235,7 +235,7 @@ const RESOURCES = [
     cat: "tutoriais",
     title: "How To Edit Documentaries like James Jani",
     url: "https://www.youtube.com/watch?v=bwz-jLZz2w8",
-    description: "James Jani detalha seu processo de edição de documentários: storyboard com a trilha definida antes do corte, motivos visuais recorrentes (contagem regressiva, quebra-cabeça) para manter a tensão e briefing próprio para a equipe de motion graphics.",
+    description: "James Jani detalha o próprio processo de edição de documentários: storyboard com a trilha definida antes do corte, motivos visuais recorrentes (contagem regressiva, quebra-cabeça) para manter a tensão e briefing próprio para a equipe de motion graphics.",
     tags: ["edição", "documentário", "processo criativo"],
   },
   {
@@ -342,7 +342,7 @@ const RESOURCES = [
     cat: "mindset",
     title: "Observar e Absorver - Eduardo Marinho (Documentário Completo)",
     url: "https://www.youtube.com/watch?v=I7arqW5luKc",
-    description: "Documentário de 71 minutos sobre a trajetória de Eduardo Marinho: da fuga da vida militar e do abandono da competição até a criação do conceito 'observar e absorver' que virou sua obra.",
+    description: "Documentário de 71 minutos sobre a trajetória de Eduardo Marinho: da fuga da vida militar e do abandono da competição até a criação do conceito 'observar e absorver' que virou a obra dele.",
     tags: ["documentário", "mindset", "processo criativo"],
   },
   {
@@ -413,7 +413,7 @@ const RESOURCES = [
     cat: "mindset",
     title: "Why divergent thinkers beat geniuses in the real world | David Epstein",
     url: "https://www.youtube.com/watch?v=Js4NiTFq9Pw",
-    description: "David Epstein defende que amplitude ganha da especialização precoce em áreas instáveis, onde regra e feedback mudam. Usa Gunpei Yokoi, que criou o Game Boy juntando tecnologias baratas e já ultrapassadas, e fecha com uma ideia simples: compare seu trabalho com o de ontem.",
+    description: "David Epstein defende que amplitude ganha da especialização precoce em áreas instáveis, onde regra e feedback mudam. Usa Gunpei Yokoi, que criou o Game Boy juntando tecnologias baratas e já ultrapassadas, e fecha com a ideia de comparar o próprio trabalho com o de ontem.",
     tags: ["mindset","carreira","processo criativo","entrevista"],
   },
   {
@@ -427,14 +427,14 @@ const RESOURCES = [
     cat: "mindset",
     title: "What if it actually works out?",
     url: "https://www.youtube.com/watch?v=5aR-5cNABAI",
-    description: "Stan Lee conta que o editor rejeitou o Homem-Aranha por ser aranha, adolescente e cheio de problemas pessoais. Ele enfiou o personagem na última edição de uma revista que já ia morrer. O recado, se a ideia é sua e você acredita nela, não deixe ninguém te convencer a largar.",
+    description: "Stan Lee conta que o editor rejeitou o Homem-Aranha por ser aranha, adolescente e cheio de problemas pessoais. Ele enfiou o personagem na última edição de uma revista que já ia morrer. O argumento dele: quem acredita na própria ideia não deve deixar ninguém convencê-lo a largar.",
     tags: ["mindset","processo criativo","carreira"],
   },
   {
     cat: "mindset",
     title: "the best piece of advice I've ever received",
     url: "https://www.youtube.com/watch?v=Yrug2Fd9CWY",
-    description: "Ensaio sobre a ideia dos 2% do livro The Comfort Crisis: só 2% das pessoas pegam a escada quando tem elevador do lado. O argumento central é consistência acima de intensidade, porque hábito pequeno vira identidade e meta grande vira prazo que você fura em fevereiro.",
+    description: "Ensaio sobre a ideia dos 2% do livro The Comfort Crisis: só 2% das pessoas pegam a escada quando tem elevador do lado. O argumento central é consistência acima de intensidade, porque hábito pequeno vira identidade e meta grande vira prazo furado em fevereiro.",
     tags: ["mindset","processo criativo"],
   },
   {
@@ -448,7 +448,7 @@ const RESOURCES = [
     cat: "mindset",
     title: "stop being an audience member of your own life",
     url: "https://www.youtube.com/watch?v=13yIfxczLpc",
-    description: "Ela mede 4h30 de tela por dia e percebe listas infinitas de ideias salvas que nunca viraram nada, então força a mão: pinta, testa gouache, recria um plano que viu no Instagram. O insight, se você nunca se permite ser iniciante, nunca deixa de ser um.",
+    description: "Ela mede 4h30 de tela por dia e percebe listas infinitas de ideias salvas que nunca viraram nada, então força a mão: pinta, testa gouache, recria um plano que viu no Instagram. A tese: quem nunca se permite ser iniciante nunca deixa de ser um.",
     tags: ["mindset","processo criativo"],
   },
   {
@@ -506,9 +506,9 @@ const RESOURCES = [
 
   {
     cat: "referencias",
-    title: "Sant – ISSO É EXATAMENTE O QUE SEPARA OS HOMENS DOS MENINOS [Short Film]",
+    title: "Sant - ISSO É EXATAMENTE O QUE SEPARA OS HOMENS DOS MENINOS [Short Film]",
     url: "https://www.youtube.com/watch?v=QzeOiygitwM",
-    description: "Short film de lançamento do álbum de Sant, com grande referência de direção, roteiro, fotografia e montagem. Referência de curta de álbum com narrativa própria, com fotografia documental analógica revelada pelo Santo Lab.",
+    description: "Curta de lançamento do álbum de Sant, com roteiro e narrativa próprios e fotografia documental analógica revelada pelo Santo Lab. Referência de direção, fotografia e montagem pra filme de álbum.",
     tags: ["cinematografia","direção","color grading"],
   },
 

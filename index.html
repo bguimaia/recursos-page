@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <!-- SEO básico -->
-  <title>MAIA - Recursos Criativos</title>
-  <meta name="description" content="Uma curadoria de referências visuais, tutoriais e recursos criativos selecionados por Maia — motion designer e diretora criativa.">
-  <meta name="author" content="Maia">
+  <title>MAIA Resources</title>
+  <meta name="description" content="Vídeos pra quem faz audiovisual estudar o ofício: referência, técnica, processo e cabeça. Curadoria de Bruno Maia.">
+  <meta name="author" content="Bruno Maia">
   <link rel="canonical" href="https://resources.bgmaia.com/">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
@@ -20,16 +20,16 @@
   <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://resources.bgmaia.com/">
-  <meta property="og:title" content="MAIA - Recursos Criativos">
-  <meta property="og:description" content="Uma curadoria de referências visuais, tutoriais e recursos criativos selecionados por Maia.">
+  <meta property="og:title" content="MAIA Resources">
+  <meta property="og:description" content="Vídeos pra quem faz audiovisual estudar o ofício: referência, técnica, processo e cabeça. Curadoria de Bruno Maia.">
   <meta property="og:image" content="https://resources.bgmaia.com/og-image.png">
   <meta property="og:locale" content="pt_BR">
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://resources.bgmaia.com/">
-  <meta name="twitter:title" content="MAIA - Recursos Criativos">
-  <meta name="twitter:description" content="Uma curadoria de referências visuais, tutoriais e recursos criativos selecionados por Maia.">
+  <meta name="twitter:title" content="MAIA Resources">
+  <meta name="twitter:description" content="Vídeos pra quem faz audiovisual estudar o ofício: referência, técnica, processo e cabeça. Curadoria de Bruno Maia.">
   <meta name="twitter:image" content="https://resources.bgmaia.com/og-image.png">
 
   <!-- Google Analytics -->
@@ -852,8 +852,8 @@
 <!-- HEADER -->
 <header>
   <div class="header-left">
-    <h1 class="sr-only">MAIA - Recursos Criativos</h1>
-    <div class="logo" role="button" tabindex="0" aria-label="MAiA — limpar filtros e voltar ao início"><img src="logo.png" alt=""></div>
+    <h1 class="sr-only">MAIA Resources</h1>
+    <div class="logo" role="button" tabindex="0" aria-label="MAIA Resources: limpar filtros e voltar ao início"><img src="logo.png" alt=""></div>
   </div>
   <div class="header-center">
     <div class="search-wrap">
@@ -950,7 +950,7 @@
 <footer>
   <div class="footer-left">
     <div class="footer-logo"><img src="logo.png" alt="MAiA"></div>
-    <div class="footer-tagline">Curadoria de recursos criativos por Maia</div>
+    <div class="footer-tagline">Curadoria de Bruno Maia · descrições resumidas com ajuda de IA</div>
   </div>
   <div class="footer-socials">
     <a class="footer-social" href="https://bgmaia.com" target="_blank" rel="noopener">
@@ -1261,7 +1261,7 @@
       imgWrap.innerHTML = `<img src="${safeUrl(r.url)}" alt="${esc(r.title)}">`;
     }
 
-    const rel = r.tags.includes('afiliado') ? 'noopener sponsored' : 'noopener';
+    const rel = r.tags.some(t => t === 'afiliado' || t === 'indicação') ? 'noopener sponsored' : 'noopener';
     const actionHTML =
       type === 'link'     ? `<a class="modal-action link"     href="${safeUrl(r.url)}" target="_blank" rel="${rel}">↗ Abrir link</a>` :
       type === 'download' ? `<a class="modal-action download" href="${safeUrl(r.url)}" target="_blank" rel="${rel}">Baixar ↗</a>` : '';

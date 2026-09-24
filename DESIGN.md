@@ -1,6 +1,6 @@
 ---
-name: MAIA - Recursos Criativos
-description: Biblioteca de recursos curados por Maia — motion designer e diretora criativa.
+name: MAIA Resources (sistema do site antigo)
+description: Sistema visual do index.html que ainda está no ar. O redesign aprovado vive em prototipo/.
 colors:
   bg:          "#0d0d0d"
   surface:     "#161616"
@@ -90,6 +90,8 @@ components:
     rounded:         "{rounded.pill}"
     padding:         "5px 12px"
 ---
+
+> **Desatualizado (24/09/2026).** Este arquivo descreve o `index.html` que ainda está no ar. O sistema aprovado pro redesign está em `prototipo/index.html`: terracota `#D4683F` como único acento, Archivo + JetBrains Mono, sem cor por categoria, header não fixo, barra da biblioteca fixa no desktop. Não desenhar nada novo a partir das cores e fontes abaixo. Vai ser reescrito no port.
 
 # Design System: MAIA - Recursos Criativos
 
